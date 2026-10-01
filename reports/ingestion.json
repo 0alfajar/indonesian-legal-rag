@@ -1,0 +1,71 @@
+{
+  "documents": [
+    {
+      "document": "PP Nomor 35 Tahun 2021",
+      "articles": 66,
+      "chunks": 164,
+      "validation": {
+        "duplicate_pasal": [],
+        "empty_pasal": [],
+        "ayat_issues": [],
+        "warnings": [
+          "Merged distinct text for repeated ayat 3; review required",
+          "Merged distinct text for repeated ayat 3; review required",
+          "Merged distinct text for repeated ayat 2; review required"
+        ]
+      },
+      "corrections": [
+        {
+          "page": 31,
+          "original": "Pasal4T",
+          "replacement": "Pasal 47",
+          "reason": "Visually verified against the source PDF page 31; extracted text confuses 7 with T."
+        }
+      ],
+      "explanation_items_excluded": 164,
+      "tables_requiring_review": 0
+    },
+    {
+      "document": "PP Nomor 5 Tahun 2021",
+      "articles": 567,
+      "chunks": 1570,
+      "validation": {
+        "duplicate_pasal": [],
+        "empty_pasal": [],
+        "ayat_issues": [],
+        "warnings": [
+          "Merged distinct text for repeated ayat 1; review required",
+          "Merged distinct text for repeated ayat 1; review required"
+        ]
+      },
+      "corrections": [],
+      "explanation_items_excluded": 0,
+      "tables_requiring_review": 335
+    },
+    {
+      "document": "PP Nomor 51 Tahun 2023",
+      "articles": 25,
+      "chunks": 80,
+      "validation": {
+        "duplicate_pasal": [],
+        "empty_pasal": [],
+        "ayat_issues": [],
+        "warnings": [
+          "Pasal 26: missing ayat markers [8]; review source",
+          "Pasal 35: missing ayat markers [2]; review source"
+        ]
+      },
+      "corrections": [],
+      "explanation_items_excluded": 70,
+      "tables_requiring_review": 0
+    }
+  ],
+  "total_chunks": 1814,
+  "excluded": [
+    {
+      "file": "UU Nomor 6 Tahun 2023.pdf",
+      "enabled": false,
+      "reason": "1127-page document requires a separate ingestion and extraction-quality review before extending the evaluation corpus."
+    }
+  ]
+}

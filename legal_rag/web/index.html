@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Legal Atlas - Indonesian Legal Research</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="chatgpt-layout">
+    <!-- Sidebar Backdrop for Mobile -->
+    <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-top">
+        <div class="sidebar-nav">
+          <button id="sidebar-close-btn" class="icon-btn" aria-label="Close sidebar" title="Close sidebar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 6L6 18M6 6l12 12"/>
+            </svg>
+          </button>
+          <button id="new-chat-btn" class="icon-btn" aria-label="New chat" title="New chat">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12h18M12 3v18"/>
+            </svg>
+          </button>
+        </div>
+
+        <div class="sidebar-menu">
+          <div class="menu-item new-chat-pill" id="new-chat-pill">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12h18M12 3v18"/>
+            </svg>
+            <span>New chat</span>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="section-heading">Scope</div>
+          <div class="custom-select-wrapper">
+            <select id="document" class="sidebar-select">
+              <option value="">All Regulations</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="section-heading">Mode</div>
+          <div class="custom-select-wrapper">
+            <select id="mode" class="sidebar-select">
+              <option value="answer">Answer with citations</option>
+              <option value="search">Search provisions only</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <div class="section-heading">Preset Queries</div>
+          <div class="history-list">
+            <button type="button" class="history-item" data-question="Bagaimana ketentuan uang kompensasi bagi pekerja PKWT?">
+              Kompensasi pekerja PKWT
+            </button>
+            <button type="button" class="history-item" data-question="Apa bentuk perizinan berusaha untuk kegiatan usaha dengan tingkat risiko rendah?">
+              Perizinan risiko rendah
+            </button>
+            <button type="button" class="history-item" data-question="Variabel apa saja yang dipertimbangkan dalam formula penyesuaian Upah minimum?">
+              Formula upah minimum
+            </button>
+            <button type="button" class="history-item" data-question="Berapa batas hari kerja sebulan untuk perjanjian kerja harian?">
+              Batas kerja perjanjian harian
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="user-profile">
+          <div class="user-avatar">LA</div>
+          <div class="user-info">
+            <span class="user-name">Legal Atlas</span>
+            <span id="corpus-status-text" class="user-plan">1,814 passages</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="main-panel">
+      <!-- Top Bar -->
+      <header class="chat-header">
+        <div class="header-left">
+          <button id="sidebar-toggle" class="icon-btn" aria-label="Open sidebar" title="Open sidebar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/>
+            </svg>
+          </button>
+          <div class="model-picker">
+            <span class="model-title">Legal Atlas</span>
+            <span id="header-scope-label" class="model-scope">All Regulations</span>
+          </div>
+        </div>
+        <div class="header-right">
+          <!-- Removed redundant header new chat button - use sidebar button instead -->
+        </div>
+      </header>
+
+      <!-- Chat Thread / Content -->
+      <div id="chat-scroller" class="chat-viewport">
+        <!-- Empty State (Welcome) -->
+        <div id="welcome-view" class="empty-state">
+          <h1 class="empty-title">What can I help you research?</h1>
+          <div class="prompt-grid">
+            <button type="button" class="prompt-card" data-question="Bagaimana ketentuan uang kompensasi bagi pekerja PKWT berdasarkan masa kerjanya?">
+              <span class="prompt-card-title">Kompensasi PKWT</span>
+              <span class="prompt-card-sub">Formula perhitungan masa kerja (PP 35/2021)</span>
+            </button>
+            <button type="button" class="prompt-card" data-question="Apa bentuk perizinan berusaha untuk kegiatan usaha dengan tingkat risiko menengah tinggi?">
+              <span class="prompt-card-title">Perizinan Risiko</span>
+              <span class="prompt-card-sub">Persyaratan izin risiko menengah tinggi (PP 5/2021)</span>
+            </button>
+            <button type="button" class="prompt-card" data-question="Kapan Upah minimum Ibu Kota Nusantara mulai berlaku menurut PP 51 Tahun 2023?">
+              <span class="prompt-card-title">Upah Minimum IKN</span>
+              <span class="prompt-card-sub">Pemberlakuan upah perdana kawasan IKN (PP 51/2023)</span>
+            </button>
+            <button type="button" class="prompt-card" data-question="Apakah perjanjian kerja waktu tertentu (PKWT) boleh mensyaratkan adanya masa percobaan?">
+              <span class="prompt-card-title">Masa Percobaan PKWT</span>
+              <span class="prompt-card-sub">Keabsahan klausul masa percobaan dalam PKWT</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Message List -->
+        <div id="messages-container" class="conversation-thread" hidden></div>
+
+        <!-- Thinking State (Minimalist ChatGPT dot) -->
+        <div id="thinking-indicator" class="thinking-state" hidden>
+          <span class="thinking-dot"></span>
+          <span id="thinking-label" class="thinking-label">Searching regulations...</span>
+        </div>
+      </div>
+
+      <!-- Bottom Input Composer -->
+      <div class="composer-container">
+        <form id="query-form" class="composer-box">
+          <textarea
+            id="question"
+            rows="1"
+            placeholder="Ask anything about Indonesian regulations..."
+            maxlength="2000"
+            required
+          ></textarea>
+          <button id="submit-btn" type="submit" class="submit-button" aria-label="Send prompt" disabled>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 19V5M5 12l7-7 7 7"/>
+            </svg>
+          </button>
+        </form>
+        <div class="composer-disclaimer">
+          Legal Atlas can make mistakes. Verify cited provisions against the official PDF gazette.
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

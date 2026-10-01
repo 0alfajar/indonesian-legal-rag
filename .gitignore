@@ -1,0 +1,46 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Data (too large for git)
+data/raw/
+data/extracted/
+data/processed/
+data/embeddings/
+data/indexes/
+
+# Archive
+archive/
+
+# Reports
+reports/*.png
+
+# Tests
+tests/.tmp/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Deployment artifacts
+DEPLOY_CHECKLIST.md

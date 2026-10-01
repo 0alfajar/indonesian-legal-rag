@@ -1,0 +1,10 @@
+{
+  "PP Nomor 35 Tahun 2021": [
+    {
+      "page": 31,
+      "original": "Pasal4T",
+      "replacement": "Pasal 47",
+      "reason": "Visually verified against the source PDF page 31; extracted text confuses 7 with T."
+    }
+  ]
+}

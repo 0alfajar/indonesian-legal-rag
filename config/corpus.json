@@ -1,0 +1,9 @@
+{
+  "description": "Development corpus for the portfolio demo; not a complete or consolidated collection of Indonesian law.",
+  "documents": [
+    {"file": "PP Nomor 35 Tahun 2021.pdf", "enabled": true},
+    {"file": "PP Nomor 5 Tahun 2021.pdf", "enabled": true},
+    {"file": "PP Nomor 51 Tahun 2023.pdf", "enabled": true},
+    {"file": "UU Nomor 6 Tahun 2023.pdf", "enabled": false, "reason": "1127-page document requires a separate ingestion and extraction-quality review before extending the evaluation corpus."}
+  ]
+}

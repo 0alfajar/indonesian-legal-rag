@@ -1,0 +1,282 @@
+[
+  {
+    "id": "pp5_q01",
+    "question": "Apa saja cakupan utama penyelenggaraan Perizinan Berusaha Berbasis Risiko?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "2",
+    "category": "scope"
+  },
+  {
+    "id": "pp5_q02",
+    "question": "Untuk apa penyelenggaraan Perizinan Berusaha Berbasis Risiko dilakukan?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "3",
+    "category": "purpose"
+  },
+  {
+    "id": "pp5_q03",
+    "question": "Apa yang wajib dipenuhi Pelaku Usaha untuk memulai dan menjalankan kegiatan usahanya?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "4",
+    "category": "requirement"
+  },
+  {
+    "id": "pp5_q04",
+    "question": "Apa saja yang termasuk persyaratan dasar Perizinan Berusaha?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "5",
+    "category": "requirement"
+  },
+  {
+    "id": "pp5_q05",
+    "question": "Sektor apa saja yang termasuk dalam penyelenggaraan Perizinan Berusaha Berbasis Risiko?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "6",
+    "category": "scope"
+  },
+  {
+    "id": "pp5_q06",
+    "question": "Penetapan tingkat Risiko kegiatan usaha dilakukan berdasarkan apa?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "7",
+    "category": "risk_analysis"
+  },
+  {
+    "id": "pp5_q07",
+    "question": "Apa saja langkah yang dilakukan Pemerintah Pusat dalam pelaksanaan analisis Risiko kegiatan usaha?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "8",
+    "category": "procedure"
+  },
+  {
+    "id": "pp5_q08",
+    "question": "Kegiatan usaha diklasifikasikan menjadi tingkat Risiko apa saja?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "10",
+    "category": "classification"
+  },
+  {
+    "id": "pp5_q09",
+    "question": "Apa bentuk Perizinan Berusaha untuk kegiatan usaha dengan tingkat Risiko rendah?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "12",
+    "category": "license_type"
+  },
+  {
+    "id": "pp5_q10",
+    "question": "Perizinan apa yang diperlukan untuk kegiatan usaha dengan tingkat Risiko menengah rendah?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "13",
+    "category": "license_type"
+  },
+  {
+    "id": "pp5_q11",
+    "question": "Apa bentuk Perizinan Berusaha untuk kegiatan usaha dengan tingkat Risiko menengah tinggi?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "14",
+    "category": "license_type"
+  },
+  {
+    "id": "pp5_q12",
+    "question": "Apa bentuk Perizinan Berusaha bagi kegiatan usaha dengan tingkat Risiko tinggi?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "15",
+    "category": "license_type"
+  },
+  {
+    "id": "pp5_q13",
+    "question": "Apa fungsi norma, standar, prosedur, dan kriteria Perizinan Berusaha Berbasis Risiko bagi Pemerintah Pusat dan Pemerintah Daerah?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "21",
+    "category": "governance"
+  },
+  {
+    "id": "pp5_q14",
+    "question": "Siapa saja yang dapat melaksanakan penerbitan Perizinan Berusaha sesuai kewenangannya?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "22",
+    "category": "authority"
+  },
+  {
+    "id": "pp5_q15",
+    "question": "Kapan PP Nomor 5 Tahun 2021 mulai berlaku?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "567",
+    "category": "effective_date"
+  },
+  {
+    "id": "pp35_q01",
+    "question": "PKWT dapat dibuat berdasarkan dasar apa saja?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "4",
+    "category": "pk_wt_basis"
+  },
+  {
+    "id": "pp35_q02",
+    "question": "Jenis pekerjaan seperti apa yang dapat dibuat dengan PKWT berdasarkan jangka waktu atau selesainya pekerjaan tertentu?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "5",
+    "category": "pk_wt_scope"
+  },
+  {
+    "id": "pp35_q03",
+    "question": "Berapa lama paling lama pekerjaan yang diperkirakan selesai dalam waktu tidak terlalu lama dapat dilaksanakan dengan PKWT?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "6",
+    "category": "duration"
+  },
+  {
+    "id": "pp35_q04",
+    "question": "Apa yang dimaksud pekerjaan bersifat musiman dalam ketentuan PKWT?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "7",
+    "category": "definition"
+  },
+  {
+    "id": "pp35_q05",
+    "question": "Berapa batas maksimum keseluruhan jangka waktu PKWT berdasarkan jangka waktu termasuk perpanjangannya?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "8",
+    "category": "duration"
+  },
+  {
+    "id": "pp35_q06",
+    "question": "Apa yang harus dimuat dalam kesepakatan PKWT yang didasarkan pada selesainya suatu pekerjaan tertentu?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "9",
+    "category": "requirement"
+  },
+  {
+    "id": "pp35_q07",
+    "question": "Berapa hari kerja dalam satu bulan batas agar pekerjaan dapat menggunakan Perjanjian Kerja harian?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "10",
+    "category": "daily_work"
+  },
+  {
+    "id": "pp35_q08",
+    "question": "Apa saja yang paling sedikit harus dicantumkan dalam Perjanjian Kerja harian?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "11",
+    "category": "requirement"
+  },
+  {
+    "id": "pp35_q09",
+    "question": "Apakah PKWT diperbolehkan mensyaratkan masa percobaan kerja?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "12",
+    "category": "prohibition"
+  },
+  {
+    "id": "pp35_q10",
+    "question": "Informasi apa saja yang paling sedikit harus dimuat dalam PKWT?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "13",
+    "category": "requirement"
+  },
+  {
+    "id": "pp35_q11",
+    "question": "Berapa batas waktu pencatatan PKWT secara daring setelah PKWT ditandatangani?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "14",
+    "category": "deadline"
+  },
+  {
+    "id": "pp35_q12",
+    "question": "Kapan pekerja dengan hubungan kerja berdasarkan PKWT berhak memperoleh uang kompensasi?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "15",
+    "category": "compensation"
+  },
+  {
+    "id": "pp35_q13",
+    "question": "Bagaimana cara menghitung besaran uang kompensasi untuk pekerja PKWT berdasarkan masa kerjanya?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "16",
+    "category": "compensation"
+  },
+  {
+    "id": "pp35_q14",
+    "question": "Apa kewajiban pengusaha terkait uang kompensasi jika hubungan kerja diakhiri sebelum jangka waktu PKWT berakhir?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "17",
+    "category": "compensation"
+  },
+  {
+    "id": "pp35_q15",
+    "question": "Siapa yang melaksanakan pengawasan ketenagakerjaan terhadap penerapan PP Nomor 35 Tahun 2021?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "60",
+    "category": "authority"
+  },
+  {
+    "id": "pp51_q01",
+    "question": "Dalam penghitungan Upah minimum menurut PP Nomor 51 Tahun 2023, variabel apa saja yang dipertimbangkan dalam formula penyesuaian Upah minimum?",
+    "expected_doc": "PP Nomor 51 Tahun 2023",
+    "expected_pasal": "26",
+    "category": "wage_formula"
+  },
+  {
+    "id": "pp51_q02",
+    "question": "Bagaimana penghitungan nilai penyesuaian Upah minimum untuk daerah dengan kondisi tertentu menurut Pasal 26A?",
+    "expected_doc": "PP Nomor 51 Tahun 2023",
+    "expected_pasal": "26A",
+    "category": "wage_formula"
+  },
+  {
+    "id": "pp51_q03",
+    "question": "Kapan Upah minimum provinsi mulai berlaku setelah ditetapkan?",
+    "expected_doc": "PP Nomor 51 Tahun 2023",
+    "expected_pasal": "29",
+    "category": "effective_date"
+  },
+  {
+    "id": "pp51_q04",
+    "question": "Faktor apa saja yang digunakan untuk mempertimbangkan nilai Upah minimum kabupaten/kota dalam ketentuan pengupahan yang diubah PP Nomor 51 Tahun 2023?",
+    "expected_doc": "PP Nomor 51 Tahun 2023",
+    "expected_pasal": "32",
+    "category": "wage_formula"
+  },
+  {
+    "id": "pp51_q05",
+    "question": "Bagaimana ketentuan Upah minimum pertama bagi kabupaten atau kota hasil pemekaran?",
+    "expected_doc": "PP Nomor 51 Tahun 2023",
+    "expected_pasal": "34B",
+    "category": "regional_wage"
+  },
+  {
+    "id": "pp51_q06",
+    "question": "Upah minimum apa yang digunakan pertama kali oleh kabupaten atau kota yang sudah memiliki Upah minimum tetapi kemudian masuk ke provinsi hasil pemekaran?",
+    "expected_doc": "PP Nomor 51 Tahun 2023",
+    "expected_pasal": "34C",
+    "category": "regional_wage"
+  },
+  {
+    "id": "pp51_q07",
+    "question": "Kegiatan apa yang dapat dilakukan dewan pengupahan untuk memberikan saran dan pertimbangan kepada pemerintah atau kepala daerah?",
+    "expected_doc": "PP Nomor 51 Tahun 2023",
+    "expected_pasal": "71",
+    "category": "wage_council"
+  },
+  {
+    "id": "pp51_q08",
+    "question": "Kapan Upah minimum Ibu Kota Nusantara mulai berlaku?",
+    "expected_doc": "PP Nomor 51 Tahun 2023",
+    "expected_pasal": "81A",
+    "category": "ikn_wage"
+  },
+  {
+    "id": "pp51_q09",
+    "question": "Sebelum Upah minimum Ibu Kota Nusantara mulai berlaku, Upah minimum wilayah mana yang digunakan untuk pertama kali di Ibu Kota Nusantara?",
+    "expected_doc": "PP Nomor 51 Tahun 2023",
+    "expected_pasal": "81C",
+    "category": "ikn_wage"
+  },
+  {
+    "id": "pp51_q10",
+    "question": "Kapan PP Nomor 51 Tahun 2023 mulai berlaku?",
+    "expected_doc": "PP Nomor 51 Tahun 2023",
+    "expected_pasal": "II",
+    "category": "effective_date"
+  }
+]
