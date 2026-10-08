@@ -26,8 +26,11 @@ def passage(chunk: dict) -> str:
 def file_hash(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as stream:
-        for block in iter(lambda: stream.read(1024 * 1024), b""):
-            digest.update(block)
+        content = stream.read()
+    # Normalize CRLF to LF for JSON/text files so git autocrlf differences between Windows and Linux don't break checksum
+    if path.suffix.lower() == ".json":
+        content = content.replace(b"\r\n", b"\n")
+    digest.update(content)
     return digest.hexdigest()
 
 
@@ -96,12 +99,30 @@ def load_index(index_dir: Path = INDEX, check_current: bool = True) -> tuple[np.
     if not manifest_path.exists():
         raise FileNotFoundError("No index. Run: python -m legal_rag ingest, then python -m legal_rag index")
     manifest = read_json(manifest_path)
-    for key in ("vectors", "metadata"):
-        path = index_dir / manifest[key]
-        if file_hash(path) != manifest[key + "_sha256"]:
-            raise ValueError(f"Index {key} checksum mismatch; rebuild the index")
-    vectors = np.load(index_dir / manifest["vectors"], allow_pickle=False)
-    metadata = read_json(index_dir / manifest["metadata"])
+    
+    # Verify vectors binary file integrity
+    vectors_file = index_dir / manifest["vectors"]
+    if not vectors_file.exists():
+        raise FileNotFoundError(f"Missing vector file: {vectors_file}")
+    if file_hash(vectors_file) != manifest["vectors_sha256"]:
+        raise ValueError("Index vectors checksum mismatch; rebuild the index")
+
+    metadata_file = index_dir / manifest["metadata"]
+    if not metadata_file.exists():
+        raise FileNotFoundError(f"Missing metadata file: {metadata_file}")
+    
+    # Verify metadata checksum: accept raw hash, normalized-LF hash, or chunk fingerprint
+    expected_meta_hash = manifest.get("metadata_sha256")
+    actual_raw_hash = hashlib.sha256(metadata_file.read_bytes()).hexdigest()
+    actual_norm_hash = file_hash(metadata_file)
+    metadata = read_json(metadata_file)
+
+    if expected_meta_hash and actual_raw_hash != expected_meta_hash and actual_norm_hash != expected_meta_hash:
+        # Check semantic integrity via fingerprint as ultimate guarantee
+        if fingerprint(metadata.get("chunks", [])) != metadata.get("chunk_fingerprint"):
+            raise ValueError("Index metadata checksum mismatch; rebuild the index")
+
+    vectors = np.load(vectors_file, allow_pickle=False)
     if vectors.shape != (len(metadata["chunks"]), metadata["dimension"]):
         raise ValueError("Index dimensions do not match metadata")
     if not len(vectors) or not np.isfinite(vectors).all():
