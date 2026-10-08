@@ -33,7 +33,8 @@ def main() -> int:
         command.add_argument("--method", choices=["dense", "bm25", "hybrid", "rrf"], default="hybrid")
         command.add_argument("--json", action="store_true", help="Print machine-readable output")
     serve = commands.add_parser("serve", help="Start the local portfolio web demo")
-    serve.add_argument("--port", type=int, default=8000)
+    serve.add_argument("--host", default=None, help="Host interface to bind to (defaults to $HOST or 0.0.0.0)")
+    serve.add_argument("--port", type=int, default=None, help="Port to listen on (defaults to $PORT or 8000)")
     for command in (index, evaluate, serve, commands.choices["search"], commands.choices["ask"]):
         command.add_argument("--offline", action="store_true", help="Load embedding model from local cache only")
     args = parser.parse_args()
@@ -52,7 +53,7 @@ def main() -> int:
             run(args.offline, args.questions.resolve())
         elif args.command == "serve":
             from .server import serve as run
-            run(args.port, args.offline)
+            run(port=args.port, host=args.host, offline=args.offline)
         else:
             from .retrieval import Retriever
             retriever = Retriever.load(args.offline)

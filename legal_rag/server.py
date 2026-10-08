@@ -25,7 +25,12 @@ WEB = Path(__file__).parent / "web"
 LOGGER = logging.getLogger(__name__)
 
 
-def serve(port: int = 8000, offline: bool = False) -> None:
+def serve(port: int = None, host: str = None, offline: bool = False) -> None:
+    if port is None:
+        port = int(os.environ.get("PORT", "8000"))
+    if host is None:
+        host = os.environ.get("HOST", "0.0.0.0")
+
     retriever = Retriever.load(offline)
     documents = sorted({chunk["doc_id"] for chunk in retriever.chunks})
     inference_lock = Lock()
@@ -48,7 +53,8 @@ def serve(port: int = 8000, offline: bool = False) -> None:
             self.send_bytes(status, json.dumps(payload, ensure_ascii=False).encode("utf-8"), "application/json; charset=utf-8")
 
         def valid_host(self):
-            return self.headers.get("Host") in {f"127.0.0.1:{port}", f"localhost:{port}"}
+            # Accept any non-empty Host header to work across Railway, custom domains, or localhost
+            return bool(self.headers.get("Host"))
 
         def do_GET(self):
             if not self.valid_host():
@@ -77,8 +83,12 @@ def serve(port: int = 8000, offline: bool = False) -> None:
             if not self.valid_host():
                 return self.send_json(403, {"error": "Use the local demo address"})
             origin = self.headers.get("Origin")
-            if origin and origin not in {f"http://127.0.0.1:{port}", f"http://localhost:{port}"}:
-                return self.send_json(403, {"error": "Cross-origin requests are not allowed"})
+            if origin:
+                origin_host = urlsplit(origin).netloc.lower()
+                request_host = self.headers.get("Host", "").lower()
+                # Accept if origin matches request host or loopback addresses
+                if origin_host != request_host and origin_host not in {f"127.0.0.1:{port}", f"localhost:{port}", "127.0.0.1", "localhost"}:
+                    return self.send_json(403, {"error": "Cross-origin requests are not allowed"})
             if self.path != "/api/query":
                 return self.send_json(404, {"error": "Not found"})
             if self.headers.get_content_type() != "application/json":
@@ -118,8 +128,9 @@ def serve(port: int = 8000, offline: bool = False) -> None:
             finally:
                 inference_lock.release()
 
-    with ThreadingHTTPServer(("127.0.0.1", port), Handler) as server:
-        print(f"Legal RAG demo: http://127.0.0.1:{port} (Ctrl+C to stop)", flush=True)
+    with ThreadingHTTPServer((host, port), Handler) as server:
+        display_host = "localhost" if host in {"0.0.0.0", "127.0.0.1"} else host
+        print(f"Legal RAG demo: http://{display_host}:{port} (listening on {host}:{port}) (Ctrl+C to stop)", flush=True)
         try:
             server.serve_forever()
         except KeyboardInterrupt:
