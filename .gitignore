@@ -44,3 +44,7 @@ Thumbs.db
 
 # Deployment artifacts
 DEPLOY_CHECKLIST.md
+
+# Local AI-assistant tooling
+.agents/
+skills-lock.json
