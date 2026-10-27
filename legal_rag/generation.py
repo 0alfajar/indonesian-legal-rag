@@ -5,6 +5,7 @@ correct. Answer faithfulness still requires a separately reviewed evaluation set
 """
 
 import json
+import logging
 import os
 import re
 from urllib.error import HTTPError, URLError
@@ -66,8 +67,6 @@ def validate_answer(payload: dict, sources: list[dict]) -> dict:
             raise GenerationError("Gemini returned an inconsistent inline citation")
     return payload
 
-
-import logging
 
 LOGGER = logging.getLogger(__name__)
 
