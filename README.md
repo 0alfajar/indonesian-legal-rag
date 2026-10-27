@@ -1,5 +1,7 @@
 # Legal Atlas
 
+[![CI](https://github.com/0alfajar/indonesian-legal-rag/actions/workflows/ci.yml/badge.svg)](https://github.com/0alfajar/indonesian-legal-rag/actions/workflows/ci.yml)
+
 A retrieval-augmented generation (RAG) system for Indonesian legal documents with hybrid search, verifiable citations, and optional LLM-powered answers.
 
 ## Overview
@@ -131,7 +133,18 @@ Measures retrieval quality across methods:
 - Hybrid (weighted combination)
 - RRF (Reciprocal Rank Fusion)
 
-Metrics: Recall@k, MRR, precision
+A hit means the correct regulation **and** article (pasal) appear in the top k results. Each report records SHA-256 hashes of the question set and the corpus, so results can be traced to the exact data they were computed on.
+
+**Results** on the 40-question development set (article level, `multilingual-e5-base`, semantic weight 0.7; from [`reports/evaluation.json`](reports/evaluation.json)):
+
+| Method | Hit@1 | Hit@3 | Hit@5 | MRR@5 |
+|---|---|---|---|---|
+| BM25 | 0.450 | 0.700 | 0.825 | 0.594 |
+| Dense (E5) | 0.575 | 0.750 | 0.800 | 0.671 |
+| RRF | 0.575 | 0.825 | 0.875 | 0.700 |
+| **Hybrid (weighted)** | **0.600** | **0.825** | **0.925** | **0.733** |
+
+These questions were used during development, so they are not held-out evidence; a separate test set is needed for an unbiased estimate.
 
 ## Configuration
 
@@ -284,6 +297,8 @@ Citations are verifiable through:
 ```bash
 python -m pytest tests/
 ```
+
+GitHub Actions runs `ruff check` and the test suite on every push and pull request ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)).
 
 ### Code Quality
 
