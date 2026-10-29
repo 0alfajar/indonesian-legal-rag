@@ -1,0 +1,31 @@
+name: Deploy to Hugging Face
+
+# Requires repository secret HF_TOKEN (write access) and variable HF_SPACE_ID
+# (e.g. user/legal-atlas). The Space must already exist; see docs/deployment.md.
+# Source PDFs are not in git, so this job leaves any PDFs already on the Space intact.
+on:
+  push:
+    branches: [main]
+    paths: [app.py, requirements.txt, src/**, config/**, data/indexes/**, data/processed/**, deploy/huggingface/**]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-hf
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: ${{ vars.HF_SPACE_ID != '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install "huggingface_hub>=0.30"
+      - name: Upload to Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          HF_SPACE_ID: ${{ vars.HF_SPACE_ID }}
+          DEPLOY_MESSAGE: "Deploy ${{ github.sha }}"
+        run: python scripts/deploy_hf.py

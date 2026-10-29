@@ -1,26 +1,14 @@
-.venv/
-.vscode/
-.git/
-.github/
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.pytest_cache/
-.ruff_cache/
-*.egg-info/
-build/
-dist/
-archive/
-reports/
-tests/
-.env
-.env.*
-!.env.example
-*.md
-!README_HF.md
-setup.sh
-setup.bat
-DEPLOYMENT.md
-CONTRIBUTING.md
-CHANGELOG.md
+# Allow-list: the image only needs the package, the serving index, and source PDFs.
+*
+!pyproject.toml
+!README.md
+!src/
+!config/
+!data/indexes/
+!data/processed/v2/chunks.json
+!data/raw/
+
+# Disabled in config/corpus.json and too large for the demo image.
+data/raw/UU Nomor 6 Tahun 2023.pdf
+**/__pycache__
+**/*.py[cod]

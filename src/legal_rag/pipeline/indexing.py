@@ -7,8 +7,8 @@ from pathlib import Path
 
 import numpy as np
 
-from .config import DATA, INDEX, MODEL, PROCESSED
-from .storage import fingerprint, read_json, write_json
+from ..config import DATA, INDEX, MODEL, PROCESSED
+from ..storage import fingerprint, read_json, write_json
 
 
 def load_model(offline: bool = False):
@@ -16,7 +16,10 @@ def load_model(offline: bool = False):
     from sentence_transformers import SentenceTransformer
 
     torch.set_num_threads(min(4, os.cpu_count() or 1))
-    return SentenceTransformer(MODEL, local_files_only=offline)
+    # LEGAL_RAG_DEVICE pins the device; ZeroGPU emulates CUDA outside @spaces.GPU,
+    # so its Space must force "cpu" or encoding fails at request time.
+    return SentenceTransformer(MODEL, local_files_only=offline,
+                               device=os.environ.get("LEGAL_RAG_DEVICE") or None)
 
 
 def passage(chunk: dict) -> str:

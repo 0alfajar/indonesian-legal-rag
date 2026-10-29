@@ -5,7 +5,7 @@ import numpy as np
 from rank_bm25 import BM25Okapi
 
 from .config import MODEL, SEMANTIC_WEIGHT
-from .indexing import load_index, load_model
+from .pipeline.indexing import load_index, load_model
 
 
 def tokenize(text: str) -> list[str]:

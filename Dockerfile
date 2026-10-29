@@ -1,31 +1,38 @@
+# Self-hosted image for the standard-library web demo (src/legal_rag/web).
+# Not used by the Hugging Face Space: Docker Spaces need a paid plan, so the free
+# demo runs app.py on the Gradio SDK instead (see docs/deployment.md).
 FROM python:3.11-slim
 
-ENV PYTHONUNBUFFERED=1 \
+RUN useradd --create-home --uid 1000 user
+USER user
+
+ENV HOME=/home/user \
+    PATH=/home/user/.local/bin:$PATH \
+    PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
-    PORT=8000 \
-    HOST=0.0.0.0
+    PIP_NO_CACHE_DIR=1 \
+    HF_HOME=/home/user/.cache/huggingface \
+    LEGAL_RAG_ROOT=/home/user/app \
+    HOST=0.0.0.0 \
+    PORT=7860
 
-WORKDIR /app
+WORKDIR /home/user/app
 
-# Install minimal build tools if needed
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
+# CPU-only PyTorch keeps the image ~2 GB smaller than the default CUDA wheels.
+RUN pip install --user --index-url https://download.pytorch.org/whl/cpu torch
+RUN pip install --user "sentence-transformers==6.1.0"
 
-# Install PyTorch CPU first to avoid heavy CUDA wheels (saves >1.5GB image size)
-RUN pip install --no-cache-dir --index-url https://download.pytorch.org/whl/cpu torch
-
-# Copy dependency definition and project files
-COPY . .
-
-# Install package dependencies
-RUN pip install --no-cache-dir -e .
-
-# Pre-cache the embedding model during docker build so startup takes 1s instead of minutes
+# Bake the embedding model into the image so cold starts never download it.
 RUN python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('intfloat/multilingual-e5-base')"
 
-EXPOSE 8000
+COPY --chown=user pyproject.toml README.md ./
+COPY --chown=user src ./src
+RUN pip install --user .
 
-# Start server directly without rebuilding the index (pre-built indexes exist in data/indexes/e5-v2)
-CMD ["python", "-m", "legal_rag", "serve"]
+# Serving needs only the prebuilt index, the chunk manifest, and optional source PDFs.
+COPY --chown=user config ./config
+COPY --chown=user data ./data
+
+EXPOSE 7860
+ENV HF_HUB_OFFLINE=1
+CMD ["legal-rag", "serve", "--offline"]

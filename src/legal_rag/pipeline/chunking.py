@@ -1,7 +1,7 @@
 """Create bounded retrieval passages without losing unassigned article text."""
 
 import re
-from .config import MAX_CHARS
+from ..config import MAX_CHARS
 
 
 def split_text(text: str, max_chars: int = MAX_CHARS) -> list[str]:

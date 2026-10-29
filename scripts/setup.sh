@@ -2,6 +2,7 @@
 # Legal Atlas - Quick Setup Script
 
 set -e
+cd "$(dirname "$0")/.."
 
 echo "Legal Atlas Setup"
 echo "===================="
@@ -38,14 +39,15 @@ pip install --upgrade pip > /dev/null
 
 # Install dependencies
 echo "Installing dependencies..."
-pip install -e . > /dev/null
+pip install -e ".[demo,dev]" > /dev/null
 
 echo ""
 echo "Installation complete!"
 echo ""
 echo "Quick Start:"
 echo "   source .venv/bin/activate"
-echo "   python -m legal_rag serve"
+echo "   python app.py      # Gradio demo"
+echo "   legal-rag serve    # HTML demo"
 echo ""
 echo "Full documentation: README.md"
 echo ""

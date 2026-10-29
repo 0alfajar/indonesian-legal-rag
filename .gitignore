@@ -42,5 +42,8 @@ tests/.tmp/
 .DS_Store
 Thumbs.db
 
-# Deployment artifacts
+# Gradio
+.gradio/
+
+# Local notes
 DEPLOY_CHECKLIST.md

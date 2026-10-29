@@ -5,6 +5,29 @@ All notable changes to Legal Atlas will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0] - 2026-10-29
+
+### Added
+- Gradio app (`app.py`) for a free Hugging Face Space on ZeroGPU hardware, with CPU retrieval,
+  two-stage search → answer flow, and PDF page links.
+- `scripts/deploy_hf.py`: single-commit Space upload through the Hub API, Space secret for
+  `GEMINI_API_KEY`, and cleanup of stale index artefacts.
+- GitHub Actions: CI (ruff + pytest) and automatic Space deployment.
+- HTML server: per-client rate limit, HF-compatible `frame-ancestors`, proxy-aware origin check,
+  and PDF links shown only when the PDF is deployed.
+- `LEGAL_RAG_ROOT` and `LEGAL_RAG_DEVICE` environment overrides.
+- Claude Code project skills and `CLAUDE.md`.
+- Docs: architecture, deployment, rewritten contributing guide.
+
+### Changed
+- `src/` layout; offline build steps moved to `legal_rag.pipeline`.
+- Dockerfile runs as uid 1000 with the model baked in, and is now for self-hosting only.
+- Encoding lock no longer blocks concurrent Gemini calls.
+
+### Removed
+- Railway config and superseded deployment guides.
+- Legacy `data/embeddings/` from version control (local cache only).
+
 ## [0.1.0] - 2024-10-01
 
 ### Added

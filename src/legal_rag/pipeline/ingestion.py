@@ -1,10 +1,10 @@
 """Explicit corpus selection and non-destructive ingestion into versioned outputs."""
 
 from pathlib import Path
-from .config import ROOT, DATA, EXTRACTED, PROCESSED
+from ..config import ROOT, DATA, EXTRACTED, PROCESSED
 from .chunking import create_chunks
 from .parser import parse_document
-from .storage import read_json, write_json, fingerprint
+from ..storage import read_json, write_json, fingerprint
 
 
 def corpus() -> list[dict]:

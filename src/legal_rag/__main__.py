@@ -40,13 +40,13 @@ def main() -> int:
     args = parser.parse_args()
     try:
         if args.command == "extract":
-            from .ingestion import extract as run
+            from .pipeline.ingestion import extract as run
             run(args.force, args.ocr)
         elif args.command == "ingest":
-            from .ingestion import ingest
+            from .pipeline.ingestion import ingest
             print(json.dumps(ingest(), ensure_ascii=False, indent=2))
         elif args.command == "index":
-            from .indexing import build_index
+            from .pipeline.indexing import build_index
             print(build_index(args.offline, args.batch_size))
         elif args.command == "evaluate":
             from .evaluation import evaluate as run

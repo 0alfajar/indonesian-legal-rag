@@ -1,4 +1,9 @@
-numpy==1.26.4
+# Hugging Face Space runtime (Gradio SDK on ZeroGPU). The Space installs Gradio
+# itself from `sdk_version` in deploy/huggingface/README.md; do not list it here.
+# Local development installs from pyproject.toml instead: pip install -e ".[demo,dev]"
+torch==2.13.0  # newest release on the ZeroGPU supported list
+numpy>=1.26,<3
 rank-bm25==0.2.2
 sentence-transformers==6.1.0
 python-dotenv==1.2.2
+spaces

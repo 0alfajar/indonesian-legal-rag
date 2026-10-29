@@ -9,8 +9,8 @@ import re
 from pathlib import Path
 from collections import Counter
 
-from .config import ROOT
-from .storage import read_json
+from ..config import ROOT
+from ..storage import read_json
 
 
 

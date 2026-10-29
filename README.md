@@ -1,343 +1,147 @@
-# Legal Atlas
+# Legal Atlas — Indonesian Legal RAG
 
-A retrieval-augmented generation (RAG) system for Indonesian legal documents with hybrid search, verifiable citations, and optional LLM-powered answers.
+[![CI](https://github.com/0alfajar/indonesian-legal-rag/actions/workflows/ci.yml/badge.svg)](https://github.com/0alfajar/indonesian-legal-rag/actions/workflows/ci.yml)
+[![Hugging Face Space](https://img.shields.io/badge/%F0%9F%A4%97%20Demo-Hugging%20Face%20Space-yellow)](https://huggingface.co/spaces/0alfajar/legal-atlas)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue)](pyproject.toml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 
-## Overview
+Retrieval-augmented question answering over Indonesian government regulations, built so that
+**every answer can be traced back to a specific Pasal and ayat** — and so retrieval quality is
+measured, not assumed.
 
-Legal Atlas indexes Indonesian regulations (Peraturan Pemerintah) and enables natural language search with precise article-level citations. The system combines dense vector retrieval with BM25 lexical matching for robust search across legal text.
+> **Live demo:** [huggingface.co/spaces/0alfajar/legal-atlas](https://huggingface.co/spaces/0alfajar/legal-atlas)
+> (search works without a key; Gemini answers when the Space secret is set)
 
-**Core capabilities:**
-- Semantic and lexical hybrid search over legal provisions
-- Article and section-level citation tracking
-- Direct PDF page linking for source verification
-- Optional LLM answer generation with inline citations
-- Reproducible evaluation framework
+## Highlights
+
+| | |
+|---|---|
+| **Structure-aware ingestion** | Docling PDF extraction → parser that rebuilds BAB / Bagian / Pasal / ayat hierarchy, repairs misplaced ayat markers, and validates every document (no duplicate or empty Pasal) |
+| **Hybrid retrieval** | `multilingual-e5-base` dense vectors + BM25, min-max weighted fusion (0.7 / 0.3) with RRF as a baseline; deduplicated to one hit per article |
+| **Evidence expansion** | Retrieved ayat are expanded with sibling ayat of the same Pasal so conditions in neighbouring paragraphs are not lost |
+| **Source-bound generation** | Gemini is constrained by a JSON schema; each statement must cite known source IDs, inline `[S#]` markers are cross-checked, and invalid answers are rejected rather than shown |
+| **Reproducible evaluation** | 40-question dev set, hit@k / MRR across six retrieval configurations, dataset and corpus fingerprints recorded in every report |
+| **Integrity-checked index** | Versioned vector artefacts behind an atomic manifest with SHA-256 checksums and a chunk fingerprint that detects stale indexes |
+
+## Results
+
+Article-level retrieval on [`data/evaluation/dev.json`](data/evaluation/dev.json) (40 questions, 3 regulations), from [`reports/evaluation.json`](reports/evaluation.json):
+
+| Method | hit@1 | hit@3 | hit@5 | MRR@5 |
+|---|---:|---:|---:|---:|
+| BM25 | 0.450 | 0.700 | 0.825 | 0.594 |
+| Dense (E5) | 0.575 | 0.750 | 0.800 | 0.671 |
+| RRF (dense + BM25) | 0.575 | 0.825 | 0.875 | 0.700 |
+| **Hybrid 0.7 / 0.3** | **0.600** | **0.825** | **0.925** | **0.733** |
+
+The dev set was written alongside development, so treat these as development numbers rather than held-out evidence.
 
 ## Architecture
 
-```
-legal_rag/
-├── ingestion.py      # PDF extraction and document parsing
-├── chunking.py       # Article-based text segmentation
-├── indexing.py       # E5 embedding generation and storage
-├── retrieval.py      # Hybrid search (dense + BM25 + RRF)
-├── generation.py     # Gemini answer synthesis with citations
-├── evaluation.py     # Retrieval quality benchmarks
-├── server.py         # Local web demo server
-└── web/              # Frontend interface
-```
-
-**Search pipeline:**
-1. Query embedding (multilingual-e5-base)
-2. Dense retrieval (cosine similarity)
-3. BM25 lexical matching
-4. Reciprocal Rank Fusion
-5. Optional LLM generation with source attribution
-
-## Installation
-
-**Requirements:** Python 3.11+
-
-```bash
-# Clone repository
-git clone <repository-url>
-cd legal-rag
-
-# Install dependencies
-pip install -e .
-
-# For PDF extraction (optional)
-pip install -e ".[ingestion]"
-
-# For development
-pip install -e ".[dev]"
+```mermaid
+flowchart LR
+    subgraph Offline build
+        A[PDFs<br/>data/raw] -->|Docling| B[Extracted JSON]
+        B -->|parser.py| C[Pasal / ayat tree<br/>+ validation]
+        C -->|chunking.py| D[Chunks ≤1600 chars<br/>with heading context]
+        D -->|indexing.py| E[(E5 index<br/>manifest + SHA-256)]
+    end
+    subgraph Query time
+        Q[Question] --> R{Hybrid retriever}
+        E --> R
+        R -->|dense + BM25| S[Top-k articles]
+        S -->|sibling ayat| T[Evidence S1…Sn]
+        T -->|JSON schema| G[Gemini]
+        G -->|citation validation| U[Answer with Pasal citations]
+    end
 ```
 
-**Dependencies:**
-- `numpy` - Array operations
-- `rank-bm25` - Lexical search
-- `sentence-transformers` - Dense retrieval
-- `python-dotenv` - Environment config
+More detail in [docs/architecture.md](docs/architecture.md).
 
-## Quick Start
-
-### 1. Run the Web Interface
-
-```bash
-python -m legal_rag serve
-```
-
-Open **http://127.0.0.1:8000** in your browser.
-
-The interface provides:
-- Natural language queries in Indonesian
-- Document scope filtering
-- Search-only or answer generation modes
-- Expandable source citations with PDF links
-
-### 2. Command Line Search
-
-**Search provisions:**
-```bash
-python -m legal_rag search "ketentuan upah minimum" --top-k 5
-```
-
-**Get LLM answer with citations:**
-```bash
-python -m legal_rag ask "Bagaimana formula perhitungan upah minimum?"
-```
-
-**Filter by document:**
-```bash
-python -m legal_rag search "perizinan berusaha" --document "PP Nomor 5 Tahun 2021"
-```
-
-**Filter by article:**
-```bash
-python -m legal_rag search "kompensasi PKWT" --pasal 15
-```
-
-## Data Pipeline
-
-### Ingestion
-
-```bash
-# Extract PDFs to structured JSON
-python -m legal_rag extract
-
-# Parse and chunk documents
-python -m legal_rag ingest
-
-# Build vector index
-python -m legal_rag index
-```
-
-**Chunking strategy:**
-- Article-level segmentation (Pasal + Ayat)
-- Maximum 1,600 characters per chunk
-- Metadata preservation (document ID, page numbers, hierarchy)
-
-**Corpus:** 3 Indonesian government regulations (PP 35/2021, PP 5/2021, PP 51/2023)
-
-### Evaluation
-
-```bash
-python -m legal_rag evaluate --questions data/evaluation/dev.json
-```
-
-Measures retrieval quality across methods:
-- Dense (E5 embeddings only)
-- BM25 (lexical only)
-- Hybrid (weighted combination)
-- RRF (Reciprocal Rank Fusion)
-
-Metrics: Recall@k, MRR, precision
-
-## Configuration
-
-### Environment Variables
-
-Create `.env` file:
-
-```bash
-# Optional: for answer generation
-GEMINI_API_KEY=your_api_key_here
-```
-
-Without `GEMINI_API_KEY`, the system runs in search-only mode.
-
-### Corpus Management
-
-Edit `config/corpus.json` to enable/disable documents:
-
-```json
-{
-  "documents": [
-    {"file": "PP Nomor 35 Tahun 2021.pdf", "enabled": true},
-    {"file": "PP Nomor 5 Tahun 2021.pdf", "enabled": true}
-  ]
-}
-```
-
-### Retrieval Parameters
-
-Adjust in `legal_rag/config.py`:
-
-```python
-MODEL = "intfloat/multilingual-e5-base"  # Embedding model
-MAX_CHARS = 1600                          # Chunk size
-SEMANTIC_WEIGHT = 0.7                     # Dense vs BM25 ratio
-```
-
-## API Reference
-
-### Server Endpoints
-
-**GET /api/health**
-```json
-{
-  "status": "ready",
-  "documents": ["PP Nomor 35 Tahun 2021", ...],
-  "chunks": 1814,
-  "generation_configured": true
-}
-```
-
-**POST /api/query**
-```json
-{
-  "question": "Bagaimana ketentuan upah minimum?",
-  "document": "PP Nomor 51 Tahun 2023",  // optional
-  "mode": "answer"  // or "search"
-}
-```
-
-Response includes:
-- `results`: Ranked search results with scores
-- `sources`: Formatted citations with metadata
-- `answer`: LLM-generated response (if mode=answer)
-
-### Python API
-
-```python
-from legal_rag.retrieval import Retriever
-
-retriever = Retriever.load()
-results = retriever.search(
-    question="kompensasi PKWT",
-    top_k=5,
-    method="hybrid"
-)
-
-for result in results:
-    chunk = result["chunk"]
-    print(f"{chunk['doc_id']} - Pasal {chunk['pasal']}")
-    print(f"Score: {result['score']:.3f}")
-```
-
-## Project Structure
+## Project layout
 
 ```
 .
-├── config/                   # Corpus configuration
-├── data/
-│   ├── raw/                  # Source PDFs
-│   ├── extracted/            # Parsed JSON/Markdown
-│   ├── processed/            # Chunked documents
-│   ├── indexes/              # Vector embeddings
-│   └── evaluation/           # Test questions
-├── legal_rag/
-│   ├── web/                  # Frontend (HTML/CSS/JS)
-│   ├── ingestion.py          # PDF processing
-│   ├── chunking.py           # Text segmentation
-│   ├── indexing.py           # Embedding generation
-│   ├── retrieval.py          # Search implementation
-│   ├── generation.py         # LLM integration
-│   ├── evaluation.py         # Quality metrics
-│   └── server.py             # HTTP server
-├── tests/                    # Test suite
-├── pyproject.toml            # Dependencies
-└── README.md
+├── app.py                    # Hugging Face Space entry point (Gradio)
+├── src/legal_rag/
+│   ├── pipeline/             # offline: parser, chunking, ingestion, indexing
+│   ├── retrieval.py          # dense / BM25 / hybrid / RRF + evidence expansion
+│   ├── generation.py         # Gemini client, schema, citation validation
+│   ├── evaluation.py         # hit@k / MRR benchmark
+│   ├── server.py + web/      # self-hosted HTML demo (stdlib HTTP server)
+│   └── __main__.py           # `legal-rag` CLI
+├── config/                   # corpus selection, parser corrections
+├── data/                     # extracted, processed, indexes, evaluation set
+├── reports/                  # ingestion + evaluation reports
+├── deploy/huggingface/       # Space card (README with HF metadata)
+├── scripts/                  # deploy_hf.py, setup scripts
+├── tests/                    # offline regression suite
+└── docs/                     # architecture, deployment, contributing
 ```
 
-## Technical Details
+## Quick start
 
-### Embedding Model
+```bash
+git clone https://github.com/0alfajar/indonesian-legal-rag.git
+cd indonesian-legal-rag
+python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -e ".[demo,dev]"
+cp .env.example .env                                # optional: add GEMINI_API_KEY
 
-**intfloat/multilingual-e5-base**
-- 278M parameters
-- 768-dimensional embeddings
-- Trained on 1B+ multilingual pairs
-- Strong Indonesian language support
+python app.py                                       # Gradio demo  → http://127.0.0.1:7860
+legal-rag serve                                     # HTML demo    → http://127.0.0.1:8000
+```
 
-### Search Methods
+The prebuilt index ships with the repo, so no ingestion is needed to try it. The first run downloads `intfloat/multilingual-e5-base` (~1.1 GB).
 
-**Dense retrieval:**
-- Cosine similarity on E5 embeddings
-- Optimized for semantic matching
+### CLI
 
-**BM25:**
-- Traditional keyword search
-- Tokenization preserves Indonesian morphology
+```bash
+legal-rag search "ketentuan upah minimum" --top-k 5
+legal-rag search "kompensasi PKWT" --document "PP Nomor 35 Tahun 2021" --pasal 15
+legal-rag ask "Kapan pekerja PKWT berhak memperoleh uang kompensasi?"
+legal-rag evaluate                                  # rewrites reports/evaluation.json
+```
 
-**Hybrid fusion:**
-- Weighted combination (70% dense / 30% BM25)
-- Reciprocal Rank Fusion option
+### Rebuilding the corpus
 
-### Citation System
+```bash
+pip install -e ".[ingestion]"
+legal-rag extract     # Docling; reuses existing extractions unless --force
+legal-rag ingest      # parse + validate + chunk → data/processed/v2
+legal-rag index       # embed; unchanged passages reuse their vectors
+legal-rag evaluate
+```
 
-Each answer statement includes:
-- Inline source markers `[S1]`, `[S2]`
-- Document ID and article number
-- PDF page reference
-- Original provision text
+Documents are enabled in [`config/corpus.json`](config/corpus.json). UU 6/2023 (1,127 pages) is intentionally disabled pending an extraction-quality review.
 
-Citations are verifiable through:
-1. Source card expansion (web UI)
-2. Direct PDF links with page anchors
-3. JSON output (CLI)
+## Deployment
+
+The public demo runs **free** on Hugging Face Spaces (Gradio SDK on ZeroGPU hardware; retrieval itself runs on CPU so visitors' GPU quota is never spent). Docker Spaces need a paid plan, so the [Dockerfile](Dockerfile) is for self-hosting the HTML demo elsewhere.
+
+```bash
+pip install -e ".[deploy]"
+HF_TOKEN=hf_... python scripts/deploy_hf.py --space <user>/legal-atlas
+```
+
+Pushes to `main` redeploy automatically via [GitHub Actions](.github/workflows/deploy-hf.yml). Full guide: [docs/deployment.md](docs/deployment.md).
 
 ## Development
 
-### Running Tests
-
 ```bash
-python -m pytest tests/
-```
-
-### Code Quality
-
-```bash
-# Lint check
 ruff check .
-
-# Format
-ruff format .
+pytest -q          # offline: fixtures and mocks, no model download or API calls
 ```
 
-### Adding Documents
-
-1. Place PDF in `data/raw/`
-2. Enable in `config/corpus.json`
-3. Run ingestion pipeline:
-   ```bash
-   python -m legal_rag extract
-   python -m legal_rag ingest
-   python -m legal_rag index
-   ```
+See [docs/contributing.md](docs/contributing.md). Claude Code users get project skills in [`.claude/skills/`](.claude/skills) for deploying, adding regulations, and evaluating retrieval changes.
 
 ## Limitations
 
-- **Corpus scope:** Development demo with 3 regulations, not comprehensive
-- **Language:** Indonesian only (multilingual model, but corpus is Indonesian)
-- **Document types:** Peraturan Pemerintah format; other legal texts may need parser adjustments
-- **LLM dependency:** Answer generation requires external API (Gemini)
-- **Extraction quality:** OCR accuracy varies by PDF source quality
-
-## Performance
-
-**Search latency:**
-- Dense retrieval: ~50ms
-- Hybrid search: ~100ms
-- With LLM generation: 2-5s
-
-**Resource requirements:**
-- RAM: ~2GB (embedding model loaded)
-- Disk: ~500MB (embeddings + processed data)
-- CPU: Inference uses CPU by default (GPU optional)
+- Three regulations, not a consolidated or current body of law; amendments are not merged into their base texts.
+- Citation validation proves that a statement cites a retrieved passage, not that the legal conclusion is correct.
+- Evaluation is retrieval-only; answer faithfulness needs a separately reviewed set.
+- Not legal advice.
 
 ## License
 
-See LICENSE file for details.
-
-## Acknowledgments
-
-Built with:
-- [sentence-transformers](https://github.com/UKPLab/sentence-transformers) for embedding generation
-- [rank-bm25](https://github.com/dorianbrown/rank_bm25) for lexical search
-- [Docling](https://github.com/DS4SD/docling) for PDF extraction
-- [Gemini API](https://ai.google.dev/) for answer generation
-
----
-
-**Note:** This is a portfolio demonstration project. For production legal research systems, consider: expanded corpus coverage, citation accuracy validation with legal experts, audit logging, and compliance with data protection regulations.
+[MIT](LICENSE). Regulation texts are public Indonesian government documents.

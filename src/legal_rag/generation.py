@@ -5,10 +5,13 @@ correct. Answer faithfulness still requires a separately reviewed evaluation set
 """
 
 import json
+import logging
 import os
 import re
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
+
+LOGGER = logging.getLogger(__name__)
 
 SYSTEM_PROMPT = """You are an Indonesian legal document research assistant.
 Answer in the language of the question using ONLY the supplied source passages.
@@ -66,10 +69,6 @@ def validate_answer(payload: dict, sources: list[dict]) -> dict:
             raise GenerationError("Gemini returned an inconsistent inline citation")
     return payload
 
-
-import logging
-
-LOGGER = logging.getLogger(__name__)
 
 DEFAULT_FALLBACK_MODELS = (
     "gemini-flash-lite-latest",

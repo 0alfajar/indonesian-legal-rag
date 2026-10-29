@@ -68,12 +68,16 @@ documentSelect.addEventListener('change', () => {
   if (headerScopeLabel) headerScopeLabel.textContent = selectedText;
 });
 
+// Documents whose source PDF the server can serve (deployments may omit PDFs)
+let availablePdfs = new Set();
+
 // Load System Health & Corpus Status
 async function loadHealth() {
   try {
     const response = await fetch('/api/health');
     if (!response.ok) throw new Error('Corpus API offline');
     const health = await response.json();
+    availablePdfs = new Set(health.pdfs || []);
     if (corpusStatusText) {
       corpusStatusText.textContent = `${health.chunks.toLocaleString()} passages`;
     }
@@ -215,12 +219,16 @@ function createSourceCard(source, label) {
   header.append(badge);
 
   const page = source.page_start || 1;
-  const pdfLink = createElement('a', 'source-pdf-link');
-  pdfLink.href = `/sources/${encodeURIComponent(source.doc_id)}#page=${page}`;
-  pdfLink.target = '_blank';
-  pdfLink.rel = 'noopener noreferrer';
-  pdfLink.innerHTML = `PDF page ${page} ↗`;
-  header.append(pdfLink);
+  if (availablePdfs.has(source.doc_id)) {
+    const pdfLink = createElement('a', 'source-pdf-link');
+    pdfLink.href = `/sources/${encodeURIComponent(source.doc_id)}#page=${page}`;
+    pdfLink.target = '_blank';
+    pdfLink.rel = 'noopener noreferrer';
+    pdfLink.textContent = `PDF page ${page} ↗`;
+    header.append(pdfLink);
+  } else {
+    header.append(createElement('span', 'source-pdf-link', `PDF page ${page}`));
+  }
   card.append(header);
 
   const title = createElement('div', 'source-provision-title',

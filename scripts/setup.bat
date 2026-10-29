@@ -1,5 +1,6 @@
 @echo off
 REM Legal Atlas - Quick Setup Script (Windows)
+cd /d "%~dp0.."
 
 echo.
 echo Legal Atlas Setup
@@ -32,14 +33,14 @@ python -m pip install --upgrade pip >nul 2>&1
 
 REM Install dependencies
 echo Installing dependencies...
-pip install -e . >nul 2>&1
+pip install -e ".[demo,dev]" >nul 2>&1
 
 echo.
 echo Installation complete!
 echo.
 echo Quick Start:
 echo    .venv\Scripts\activate
-echo    python -m legal_rag serve
+echo    python app.py
 echo.
 echo Full documentation: README.md
 echo.

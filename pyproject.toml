@@ -4,8 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "indonesian-legal-rag"
-version = "0.1.0"
-description = "An Indonesian legal RAG portfolio with hybrid retrieval, reproducible evaluation, and Gemini citations"
+version = "0.2.0"
+description = "Indonesian legal RAG with hybrid retrieval, reproducible evaluation, and source-bound Gemini answers"
+readme = "README.md"
+license = { text = "MIT" }
 requires-python = ">=3.11"
 dependencies = [
   "numpy>=1.26,<3",
@@ -16,19 +18,28 @@ dependencies = [
 
 [project.optional-dependencies]
 ingestion = ["docling>=2.131,<3"]
-dev = ["ruff>=0.9,<1"]
+demo = ["gradio==6.29.1", "spaces"]
+deploy = ["huggingface_hub>=0.30"]
+dev = ["ruff>=0.9,<1", "pytest>=8"]
+
+[project.urls]
+Repository = "https://github.com/0alfajar/indonesian-legal-rag"
 
 [project.scripts]
 legal-rag = "legal_rag.__main__:main"
 
 [tool.setuptools.packages.find]
-include = ["legal_rag*"]
+where = ["src"]
 
 [tool.setuptools.package-data]
 legal_rag = ["web/*.html", "web/*.css", "web/*.js"]
 
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
 [tool.ruff]
 line-length = 110
+src = ["src", "tests", "scripts"]
 exclude = ["archive", ".venv"]
 
 [tool.ruff.lint]

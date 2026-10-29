@@ -10,11 +10,11 @@ from unittest.mock import patch
 
 import numpy as np
 
-from legal_rag.chunking import create_chunks, split_text
+from legal_rag.pipeline.chunking import create_chunks, split_text
 from legal_rag.evaluation import metrics
 from legal_rag.generation import GenerationError, generate_answer, validate_answer
-from legal_rag.indexing import file_hash, load_index
-from legal_rag.parser import item_text, ordered_items, parse_document
+from legal_rag.pipeline.indexing import file_hash, load_index
+from legal_rag.pipeline.parser import item_text, ordered_items, parse_document
 from legal_rag.retrieval import Retriever
 from legal_rag.storage import fingerprint, write_json
 
