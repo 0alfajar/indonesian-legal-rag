@@ -1,0 +1,282 @@
+[
+  {
+    "id": "pp5_t01",
+    "question": "Apa kewajiban pejabat penerbit izin terkait jangka waktu pemeriksaan persyaratan dan masa berlaku Perizinan Berusaha?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "23",
+    "category": "authority"
+  },
+  {
+    "id": "pp5_t02",
+    "question": "Di mana diatur parameter Risiko dan tingkat Risiko untuk kegiatan usaha sektor pertanian?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "38",
+    "category": "reference"
+  },
+  {
+    "id": "pp5_t03",
+    "question": "Apakah usaha niaga biofuel sebagai bahan bakar lain memerlukan izin berusaha tersendiri?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "47",
+    "category": "requirement"
+  },
+  {
+    "id": "pp5_t04",
+    "question": "Berapa jumlah minimal peralatan utama yang harus dimiliki badan usaha jasa konstruksi kualifikasi menengah?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "95",
+    "category": "requirement"
+  },
+  {
+    "id": "pp5_t05",
+    "question": "Apakah kegiatan usaha pendukung dikecualikan dari pemeriksaan nilai modal dan minimum investasi?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "190",
+    "category": "exception"
+  },
+  {
+    "id": "pp5_t06",
+    "question": "Seberapa sering inspeksi lapangan dilakukan untuk izin usaha hortikultura, dan apakah berbeda bagi usaha mikro dan kecil?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "244",
+    "category": "supervision"
+  },
+  {
+    "id": "pp5_t07",
+    "question": "Siapa yang mengawasi perizinan berusaha di bidang ketenagalistrikan dan siapa yang membantu pengawasannya?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "264",
+    "category": "supervision"
+  },
+  {
+    "id": "pp5_t08",
+    "question": "Sanksi apa yang bisa dijatuhkan kepada pelaku usaha yang melanggar izin di sektor lingkungan hidup dan kehutanan?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "363",
+    "category": "sanction"
+  },
+  {
+    "id": "pp5_t09",
+    "question": "Siapa yang berwenang menjatuhkan sanksi administratif di sektor perindustrian?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "412",
+    "category": "sanction"
+  },
+  {
+    "id": "pp5_t10",
+    "question": "Berapa denda per hari bagi badan usaha jasa konstruksi kualifikasi kecil yang terlambat melaporkan penggantian tenaga kerja konstruksi?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "417",
+    "category": "sanction"
+  },
+  {
+    "id": "pp5_t11",
+    "question": "Dalam kondisi apa izin penggunaan sumber daya air dapat dicabut?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "429",
+    "category": "sanction"
+  },
+  {
+    "id": "pp5_t12",
+    "question": "Apa sanksi bagi pelaku usaha yang memasukkan perangkat telekomunikasi yang tidak memenuhi standar teknis?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "492",
+    "category": "sanction"
+  },
+  {
+    "id": "pp5_t13",
+    "question": "Pejabat mana yang mengenakan sanksi administratif atas pelanggaran perizinan di bidang komunikasi dan informatika?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "502",
+    "category": "sanction"
+  },
+  {
+    "id": "pp5_t14",
+    "question": "Berapa kali dan untuk berapa lama peringatan tertulis diberikan kepada perusahaan alih daya?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "516",
+    "category": "sanction"
+  },
+  {
+    "id": "pp5_t15",
+    "question": "Jika izin usaha sudah dicabut, apakah pelaku usaha masih harus membayar denda keterlambatan?",
+    "expected_doc": "PP Nomor 5 Tahun 2021",
+    "expected_pasal": "544",
+    "category": "sanction"
+  },
+  {
+    "id": "pp35_t01",
+    "question": "Bisakah Menteri menetapkan waktu kerja dan waktu istirahat khusus untuk sektor usaha tertentu di luar yang sudah ditetapkan?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "24",
+    "category": "working_time"
+  },
+  {
+    "id": "pp35_t02",
+    "question": "Apakah ketentuan kerja lembur berlaku untuk semua perusahaan?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "30",
+    "category": "working_time"
+  },
+  {
+    "id": "pp35_t03",
+    "question": "Bagaimana cara menghitung upah per jam sebagai dasar upah lembur?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "32",
+    "category": "wage_formula"
+  },
+  {
+    "id": "pp35_t04",
+    "question": "Apakah perusahaan wajib memberikan istirahat panjang kepada pekerja?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "35",
+    "category": "working_time"
+  },
+  {
+    "id": "pp35_t05",
+    "question": "Berapa lama sebelum PHK pengusaha harus menyampaikan surat pemberitahuan kepada pekerja?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "37",
+    "category": "termination"
+  },
+  {
+    "id": "pp35_t06",
+    "question": "Apa hak pekerja yang di-PHK karena perusahaan melakukan penggabungan atau peleburan dan pekerja tidak mau melanjutkan hubungan kerja?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "41",
+    "category": "termination"
+  },
+  {
+    "id": "pp35_t07",
+    "question": "Apa hak pekerja jika PHK terjadi atas permohonan pekerja sendiri karena pengusaha melakukan perbuatan tidak patut terhadapnya?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "48",
+    "category": "termination"
+  },
+  {
+    "id": "pp35_t08",
+    "question": "Apa yang diterima pekerja jika lembaga penyelesaian perselisihan hubungan industrial memutuskan pengusaha tidak melakukan perbuatan yang dituduhkan pekerja?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "49",
+    "category": "termination"
+  },
+  {
+    "id": "pp35_t09",
+    "question": "Apa hak pekerja yang mengundurkan diri atas kemauan sendiri?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "50",
+    "category": "termination"
+  },
+  {
+    "id": "pp35_t10",
+    "question": "Berapa uang pesangon untuk pekerja yang di-PHK karena melanggar peraturan perusahaan setelah mendapat surat peringatan ketiga?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "52",
+    "category": "termination"
+  },
+  {
+    "id": "pp35_t11",
+    "question": "Apa hak pekerja yang di-PHK karena ditahan polisi selama enam bulan atas dugaan tindak pidana?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "54",
+    "category": "termination"
+  },
+  {
+    "id": "pp35_t12",
+    "question": "Berdasarkan apa sanksi administratif ketenagakerjaan dikenakan kepada pengusaha?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "62",
+    "category": "sanction"
+  },
+  {
+    "id": "pp35_t13",
+    "question": "Bagaimana status PKWT yang sudah berjalan sebelum PP Nomor 35 Tahun 2021 berlaku?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "63",
+    "category": "transitional"
+  },
+  {
+    "id": "pp35_t14",
+    "question": "Sejak kapan masa kerja dihitung untuk uang kompensasi PKWT yang masih berjalan ketika PP ini mulai berlaku?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "64",
+    "category": "transitional"
+  },
+  {
+    "id": "pp35_t15",
+    "question": "Kapan PP Nomor 35 Tahun 2021 mulai berlaku?",
+    "expected_doc": "PP Nomor 35 Tahun 2021",
+    "expected_pasal": "66",
+    "category": "effective_date"
+  },
+  {
+    "id": "pp51_t01",
+    "question": "Upah minimum berlaku bagi pekerja dengan masa kerja berapa lama?",
+    "expected_doc": "PP Nomor 51 Tahun 2023",
+    "expected_pasal": "24",
+    "category": "wage_scope"
+  },
+  {
+    "id": "pp51_t02",
+    "question": "Apakah gubernur wajib menetapkan upah minimum provinsi setiap tahun?",
+    "expected_doc": "PP Nomor 51 Tahun 2023",
+    "expected_pasal": "27",
+    "category": "wage_setting"
+  },
+  {
+    "id": "pp51_t03",
+    "question": "Siapa yang menghitung penyesuaian nilai upah minimum provinsi?",
+    "expected_doc": "PP Nomor 51 Tahun 2023",
+    "expected_pasal": "28",
+    "category": "wage_setting"
+  },
+  {
+    "id": "pp51_t04",
+    "question": "Untuk kabupaten/kota apa saja gubernur dapat menetapkan upah minimum kabupaten/kota?",
+    "expected_doc": "PP Nomor 51 Tahun 2023",
+    "expected_pasal": "30",
+    "category": "wage_setting"
+  },
+  {
+    "id": "pp51_t05",
+    "question": "Kapan upah minimum kabupaten/kota ditetapkan dibandingkan dengan upah minimum provinsi?",
+    "expected_doc": "PP Nomor 51 Tahun 2023",
+    "expected_pasal": "31",
+    "category": "wage_setting"
+  },
+  {
+    "id": "pp51_t06",
+    "question": "Syarat apa yang harus dipenuhi agar kabupaten/kota yang belum punya upah minimum dapat ditetapkan upah minimumnya?",
+    "expected_doc": "PP Nomor 51 Tahun 2023",
+    "expected_pasal": "31A",
+    "category": "wage_setting"
+  },
+  {
+    "id": "pp51_t07",
+    "question": "Variabel apa yang digunakan dalam formula upah minimum bagi kabupaten/kota yang belum memiliki upah minimum?",
+    "expected_doc": "PP Nomor 51 Tahun 2023",
+    "expected_pasal": "31B",
+    "category": "wage_formula"
+  },
+  {
+    "id": "pp51_t08",
+    "question": "Apa yang terjadi jika hasil penghitungan upah minimum kabupaten/kota lebih rendah dari upah minimum provinsi?",
+    "expected_doc": "PP Nomor 51 Tahun 2023",
+    "expected_pasal": "33",
+    "category": "wage_setting"
+  },
+  {
+    "id": "pp51_t09",
+    "question": "Apa yang dilakukan gubernur jika upah minimum kabupaten/kota yang direkomendasikan bupati tidak sesuai formula?",
+    "expected_doc": "PP Nomor 51 Tahun 2023",
+    "expected_pasal": "34A",
+    "category": "wage_setting"
+  },
+  {
+    "id": "pp51_t10",
+    "question": "Paling lambat kapan upah minimum kabupaten/kota diumumkan?",
+    "expected_doc": "PP Nomor 51 Tahun 2023",
+    "expected_pasal": "35",
+    "category": "deadline"
+  }
+]
