@@ -1,14 +1,57 @@
 {
-  "created_at": "2026-09-30T11:58:14.808567+00:00",
-  "dataset": "data\\evaluation\\dev.json",
+  "created_at": "2026-11-04T08:54:13.566701+00:00",
+  "dataset": "data/evaluation/dev.json",
+  "split": "dev",
   "dataset_sha256": "c37efbcaac6a456d1320080e2fc28a13020e51c18bf4ee50d65da2c6c0fc57c8",
   "corpus_sha256": "c384b01638516bc817162bd896b389a1cbb1a99fcb914986efe8fbf824cc0bae",
   "model": "intfloat/multilingual-e5-base",
   "query_prefix": "query: ",
   "semantic_weight": 0.7,
   "questions": 40,
-  "query_encoding_seconds": 3.242460299999948,
-  "evaluation_level": "document + article; original questions are a development set, not held-out evidence",
+  "query_encoding_seconds": 1.2879741999786347,
+  "evaluation_level": "document + article; dev questions were written alongside development and used for tuning",
+  "statistics": {
+    "ci": "95% percentile bootstrap, 10,000 resamples, seed 0",
+    "comparison": "hybrid_articles vs baselines on per-question RR@5; paired sign-flip permutation test, 10,000 permutations, seed 0; Holm-corrected"
+  },
+  "comparisons": {
+    "dense_articles": {
+      "mean_difference": 0.0625,
+      "ci95": [
+        -0.025,
+        0.15625
+      ],
+      "p_value": 0.21197880211978803,
+      "wins": 9,
+      "losses": 4,
+      "ties": 27,
+      "p_holm": 0.42395760423957607
+    },
+    "bm25_articles": {
+      "mean_difference": 0.1391666666666667,
+      "ci95": [
+        0.0058333333333333345,
+        0.27541666666666664
+      ],
+      "p_value": 0.0527947205279472,
+      "wins": 16,
+      "losses": 7,
+      "ties": 17,
+      "p_holm": 0.1583841615838416
+    },
+    "rrf_articles": {
+      "mean_difference": 0.03333333333333334,
+      "ci95": [
+        -0.014583333333333332,
+        0.08333333333333334
+      ],
+      "p_value": 0.24287571242875713,
+      "wins": 7,
+      "losses": 2,
+      "ties": 31,
+      "p_holm": 0.42395760423957607
+    }
+  },
   "runs": {
     "dense_chunks": {
       "metrics": {
@@ -16,6 +59,47 @@
         "hit@3": 0.725,
         "hit@5": 0.8,
         "mrr@5": 0.66625
+      },
+      "ci95": {
+        "hit@1": [
+          0.425,
+          0.725
+        ],
+        "hit@3": [
+          0.575,
+          0.85
+        ],
+        "hit@5": [
+          0.675,
+          0.925
+        ],
+        "mrr@5": [
+          0.5325,
+          0.7925
+        ]
+      },
+      "by_document": {
+        "PP Nomor 35 Tahun 2021": {
+          "questions": 15,
+          "hit@1": 0.8,
+          "hit@3": 0.9333333333333333,
+          "hit@5": 0.9333333333333333,
+          "mrr@5": 0.8666666666666667
+        },
+        "PP Nomor 5 Tahun 2021": {
+          "questions": 15,
+          "hit@1": 0.4,
+          "hit@3": 0.6,
+          "hit@5": 0.6666666666666666,
+          "mrr@5": 0.5133333333333333
+        },
+        "PP Nomor 51 Tahun 2023": {
+          "questions": 10,
+          "hit@1": 0.5,
+          "hit@3": 0.6,
+          "hit@5": 0.8,
+          "mrr@5": 0.595
+        }
       },
       "results": [
         {
@@ -1425,7 +1509,48 @@
         "hit@1": 0.6,
         "hit@3": 0.825,
         "hit@5": 0.925,
-        "mrr@5": 0.7320833333333334
+        "mrr@5": 0.7320833333333333
+      },
+      "ci95": {
+        "hit@1": [
+          0.45,
+          0.75
+        ],
+        "hit@3": [
+          0.7,
+          0.925
+        ],
+        "hit@5": [
+          0.825,
+          1.0
+        ],
+        "mrr@5": [
+          0.6204166666666667,
+          0.8375
+        ]
+      },
+      "by_document": {
+        "PP Nomor 35 Tahun 2021": {
+          "questions": 15,
+          "hit@1": 0.7333333333333333,
+          "hit@3": 0.9333333333333333,
+          "hit@5": 1.0,
+          "mrr@5": 0.8466666666666666
+        },
+        "PP Nomor 5 Tahun 2021": {
+          "questions": 15,
+          "hit@1": 0.5333333333333333,
+          "hit@3": 0.8666666666666667,
+          "hit@5": 0.9333333333333333,
+          "mrr@5": 0.7166666666666667
+        },
+        "PP Nomor 51 Tahun 2023": {
+          "questions": 10,
+          "hit@1": 0.5,
+          "hit@3": 0.6,
+          "hit@5": 0.8,
+          "mrr@5": 0.5833333333333333
+        }
       },
       "results": [
         {
@@ -2837,6 +2962,47 @@
         "hit@5": 0.8,
         "mrr@5": 0.6708333333333333
       },
+      "ci95": {
+        "hit@1": [
+          0.425,
+          0.725
+        ],
+        "hit@3": [
+          0.6,
+          0.875
+        ],
+        "hit@5": [
+          0.675,
+          0.925
+        ],
+        "mrr@5": [
+          0.5375,
+          0.7958333333333333
+        ]
+      },
+      "by_document": {
+        "PP Nomor 35 Tahun 2021": {
+          "questions": 15,
+          "hit@1": 0.8,
+          "hit@3": 0.9333333333333333,
+          "hit@5": 0.9333333333333333,
+          "mrr@5": 0.8666666666666667
+        },
+        "PP Nomor 5 Tahun 2021": {
+          "questions": 15,
+          "hit@1": 0.4,
+          "hit@3": 0.6666666666666666,
+          "hit@5": 0.6666666666666666,
+          "mrr@5": 0.5222222222222223
+        },
+        "PP Nomor 51 Tahun 2023": {
+          "questions": 10,
+          "hit@1": 0.5,
+          "hit@3": 0.6,
+          "hit@5": 0.8,
+          "mrr@5": 0.6
+        }
+      },
       "results": [
         {
           "id": "pp5_q01",
@@ -4247,6 +4413,47 @@
         "hit@5": 0.825,
         "mrr@5": 0.5941666666666666
       },
+      "ci95": {
+        "hit@1": [
+          0.3,
+          0.6
+        ],
+        "hit@3": [
+          0.55,
+          0.825
+        ],
+        "hit@5": [
+          0.7,
+          0.925
+        ],
+        "mrr@5": [
+          0.4683333333333334,
+          0.7150104166666666
+        ]
+      },
+      "by_document": {
+        "PP Nomor 35 Tahun 2021": {
+          "questions": 15,
+          "hit@1": 0.6666666666666666,
+          "hit@3": 0.9333333333333333,
+          "hit@5": 0.9333333333333333,
+          "mrr@5": 0.788888888888889
+        },
+        "PP Nomor 5 Tahun 2021": {
+          "questions": 15,
+          "hit@1": 0.2,
+          "hit@3": 0.4,
+          "hit@5": 0.6666666666666666,
+          "mrr@5": 0.36000000000000004
+        },
+        "PP Nomor 51 Tahun 2023": {
+          "questions": 10,
+          "hit@1": 0.5,
+          "hit@3": 0.8,
+          "hit@5": 0.9,
+          "mrr@5": 0.6533333333333333
+        }
+      },
       "results": [
         {
           "id": "pp5_q01",
@@ -5655,7 +5862,48 @@
         "hit@1": 0.6,
         "hit@3": 0.825,
         "hit@5": 0.925,
-        "mrr@5": 0.7333333333333333
+        "mrr@5": 0.7333333333333334
+      },
+      "ci95": {
+        "hit@1": [
+          0.45,
+          0.75
+        ],
+        "hit@3": [
+          0.7,
+          0.925
+        ],
+        "hit@5": [
+          0.825,
+          1.0
+        ],
+        "mrr@5": [
+          0.6208333333333333,
+          0.8375
+        ]
+      },
+      "by_document": {
+        "PP Nomor 35 Tahun 2021": {
+          "questions": 15,
+          "hit@1": 0.7333333333333333,
+          "hit@3": 0.9333333333333333,
+          "hit@5": 1.0,
+          "mrr@5": 0.85
+        },
+        "PP Nomor 5 Tahun 2021": {
+          "questions": 15,
+          "hit@1": 0.5333333333333333,
+          "hit@3": 0.8666666666666667,
+          "hit@5": 0.9333333333333333,
+          "mrr@5": 0.7166666666666667
+        },
+        "PP Nomor 51 Tahun 2023": {
+          "questions": 10,
+          "hit@1": 0.5,
+          "hit@3": 0.6,
+          "hit@5": 0.8,
+          "mrr@5": 0.5833333333333333
+        }
       },
       "results": [
         {
@@ -7066,6 +7314,47 @@
         "hit@3": 0.825,
         "hit@5": 0.875,
         "mrr@5": 0.7
+      },
+      "ci95": {
+        "hit@1": [
+          0.425,
+          0.725
+        ],
+        "hit@3": [
+          0.7,
+          0.925
+        ],
+        "hit@5": [
+          0.775,
+          0.975
+        ],
+        "mrr@5": [
+          0.58125,
+          0.8125520833333326
+        ]
+      },
+      "by_document": {
+        "PP Nomor 35 Tahun 2021": {
+          "questions": 15,
+          "hit@1": 0.6666666666666666,
+          "hit@3": 0.8666666666666667,
+          "hit@5": 0.9333333333333333,
+          "mrr@5": 0.7833333333333333
+        },
+        "PP Nomor 5 Tahun 2021": {
+          "questions": 15,
+          "hit@1": 0.5333333333333333,
+          "hit@3": 0.8666666666666667,
+          "hit@5": 0.8666666666666667,
+          "mrr@5": 0.6777777777777777
+        },
+        "PP Nomor 51 Tahun 2023": {
+          "questions": 10,
+          "hit@1": 0.5,
+          "hit@3": 0.7,
+          "hit@5": 0.8,
+          "mrr@5": 0.6083333333333333
+        }
       },
       "results": [
         {

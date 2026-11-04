@@ -11,6 +11,7 @@ EXTRACTED = DATA / "extracted" / "json"
 PROCESSED = DATA / "processed" / "v2"
 INDEX = DATA / "indexes" / "e5-v2"
 QUESTIONS = DATA / "evaluation" / "dev.json"
+TEST_QUESTIONS = DATA / "evaluation" / "test.json"   # held out: never tune on it
 MODEL = "intfloat/multilingual-e5-base"
 MAX_CHARS = 1600
 SEMANTIC_WEIGHT = 0.7

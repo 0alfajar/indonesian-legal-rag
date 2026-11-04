@@ -1,0 +1,223 @@
+{
+  "procedure": {
+    "seed": 20261104,
+    "quota": {
+      "PP Nomor 5 Tahun 2021": 15,
+      "PP Nomor 35 Tahun 2021": 15,
+      "PP Nomor 51 Tahun 2023": 10
+    },
+    "min_chars": 150,
+    "excluded": [
+      "articles already targeted by dev.json",
+      "Pasal 1 (definitions)",
+      "articles shorter than 150 characters"
+    ],
+    "eligible_articles": {
+      "PP Nomor 5 Tahun 2021": 533,
+      "PP Nomor 35 Tahun 2021": 49,
+      "PP Nomor 51 Tahun 2023": 15
+    }
+  },
+  "articles": [
+    {
+      "doc_id": "PP Nomor 5 Tahun 2021",
+      "pasal": "23",
+      "text": "Menteri/kepala lembaga, gubernur, bupati/wali kota, Administrator KEK, dan/atau kepala Badan Pengusahaan KPBPB sesuai dengan kewenangan masing-masing dalam: a. melakukan pemeriksaan persyaratan Perizinan Berusaha harus sesuai dengan jangka waktu; dan b. memberikan Perizinan Berusaha harus sesuai dengan masa berlaku, sebagaimana tercantum dalam Lampiran I. Pelaku Usaha harus mematuhi persyaratan dan/atau kewajiban Perizinan Berusaha sebagaimana tercantum dalam Lampiran II."
+    },
+    {
+      "doc_id": "PP Nomor 5 Tahun 2021",
+      "pasal": "38",
+      "text": "Kode KBLI/KBLI terkait, judul KBLI, ruang lingkup kegiatan, parameter Risiko, tingkat Risiko, Perizinan Berusaha, jangka waktu, masa berlaku, dan kewenangan Perizinan Berusaha sebagaimana dimaksud dalam Pasal 36 dan Perizinan Berusaha Untuk Menunjang Kegiatan Usaha sebagaimana dimaksud dalam Pasal 37 tercantum dalam Lampiran I. Persyaratan dan/atau kewajiban Perizinan Berusaha pada sektor pertanian yang ditetapkan berdasarkan hasil analisis Risiko kegiatan usaha sebagaimana dimaksud dalam Pasal 36 dan Perizinan Berusaha Untuk Menunjang Kegiatan Usaha sebagaimana dimaksud dalam Pasal 37 tercantum dalam Lampiran II."
+    },
+    {
+      "doc_id": "PP Nomor 5 Tahun 2021",
+      "pasal": "47",
+      "text": "Pelaku Usaha yang melakukan kegiatan usaha niaga bahan bakar nabati (biofuel) sebagai bahan bakar lain sebagaimana dimaksud dalam Pasal 41 ayat (5) huruf b wajib memiliki Perizinan Berusaha untuk kegiatan usaha niaga bahan bakar nabati (biofuel) sebagai bahan bakar lain. Pengajuan Perizinan Berusaha untuk kegiatan usaha niaga bahan bakar nabati (biofuel) sebagai bahan bakar lain sebagaimana dimaksud pada ayat (1) harus memenuhi persyaratan dan/atau kewajiban."
+    },
+    {
+      "doc_id": "PP Nomor 5 Tahun 2021",
+      "pasal": "95",
+      "text": "Penilaian kemampuan dalam penyediaan peralatan konstruksi sebagaimana dimaksud dalam Pasal 85 ayat (1) huruf d untuk kegiatan usaha pekerjaan konstruksi bersifat umum harus memenuhi persyaratan sebagai berikut: a. kualifikasi kecil, memiliki peralatan utama paling sedikit 1 (satu) per subklasifikasinya; b. kualifikasi menengah, memiliki peralatan utama paling sedikit 2 (dua) per subklasifikasinya; c. kualifikasi besar, memiliki peralatan utama paling sedikit 3 (tiga) per subklasifikasinya; dan d. kualifikasi besar kantor perwakilan BUJKA, memiliki paling sedikit 5 (lima) peralatan utama per subklasifikasinya. Penilaian kemampuan dalam penyediaan peralatan konstruksi sebagaimana dimaksud dalam Pasal 85 ayat (1) huruf d untuk kegiatan usaha pekerjaan konstruksi terintegrasi harus memenuhi persyaratan sebagai berikut: a. memiliki peralatan utama paling sedikit 3 (tiga) per subklasifikasinya; dan b. kantor perwakilan BUJKA, memiliki paling sedikit 5 (lima) peralatan utama per subklasifikasinya."
+    },
+    {
+      "doc_id": "PP Nomor 5 Tahun 2021",
+      "pasal": "190",
+      "text": "Terhadap kegiatan usaha pendukung sebagaimana dimaksud dalam Pasal 187 ayat (3), Pelaku Usaha wajib memenuhi persyaratan sesuai dengan ketentuan peraturan perundang-undangan, termasuk pengidentifikasian Perizinan Berusaha Berbasis Risiko. Kegiatan usaha pendukung dikecualikan dari proses pemeriksaan ketentuan nilai permodalan dan minimum investasi sebagaimana dimaksud dalam Pasal 189 ayat (2) serta kewajiban pencantuman KBLI dalam maksud dan tujuan pada legalitas Pelaku Usaha. Terhadap kegiatan usaha pendukung sebagaimana dimaksud dalam Pasal 187 ayat (3) huruf b, ketentuan dalam Pasal 188 berlaku secara mutatis mutandis."
+    },
+    {
+      "doc_id": "PP Nomor 5 Tahun 2021",
+      "pasal": "244",
+      "text": "Inspeksi lapangan untuk Perizinan Berusaha subsektor hortikultura dilakukan setiap 6 (enam) bulan. Inspeksi lapangan untuk kegiatan usaha subsektor hortikultura sebagaimana dimaksud pada ayat (1) bagi UMK-M dilakukan setiap 1 (satu) tahun. Inspeksi lapangan untuk Perizinan Berusaha Untuk Menunjang Kegiatan Usaha subsektor hortikultura yang meliputi: a. izin impor produk hortikultura; b. izin pemasukan dan pengeluaran benih hortikultura; dan c. pendaftaran varietas tanaman hortikultura, dilakukan setiap 6 (enam) bulan."
+    },
+    {
+      "doc_id": "PP Nomor 5 Tahun 2021",
+      "pasal": "264",
+      "text": "Pengawasan terhadap Perizinan Berusaha di subsektor ketenagalistrikan dilakukan oleh menteri yang menyelenggarakan urusan pemerintahan di bidang energi dan sumber daya mineral, gubernur, Administrator KEK, atau kepala Badan Pengusahaan KPBPB sesuai kewenangan masing-masing berdasarkan ketentuan peraturan perundangundangan. Pengawasan sebagaimana dimaksud pada ayat (1) dibantu oleh inspektur ketenagalistrikan."
+    },
+    {
+      "doc_id": "PP Nomor 5 Tahun 2021",
+      "pasal": "363",
+      "text": "Setiap Pelaku Usaha yang berdasarkan hasil Pengawasan ditemukan ketidaksesuaian atau pelanggaran terhadap Perizinan Berusaha di sektor lingkungan hidup dan kehutanan, dikenai sanksi administratif berupa: a. teguran tertulis; b. paksaan pemerintah; c. denda administratif; d. pembekuan Perizinan Berusaha; dan/atau e. pencabutan Perizinan Berusaha."
+    },
+    {
+      "doc_id": "PP Nomor 5 Tahun 2021",
+      "pasal": "412",
+      "text": "Pengenaan sanksi administratif sektor perindustrian dilaksanakan oleh menteri yang menyelenggarakan urusan pemerintahan di bidang perindustrian, gubernur, bupati/wali kota, Administrator KEK, atau kepala Badan Pengusahaan KPBPB sesuai dengan ketentuan peraturan perundang-undangan. Ketentuan mengenai tata cara pengenaan sanksi administratif, mekanisme, jangka waktu, banding administratif, dan pejabat yang berwenang diatur dengan peraturan menteri yang menyelenggarakan urusan pemerintahan di bidang perindustrian."
+    },
+    {
+      "doc_id": "PP Nomor 5 Tahun 2021",
+      "pasal": "417",
+      "text": "Menteri yang menyelenggarakan urusan pemerintahan di bidang pekerjaan umum mengenakan sanksi administratif berupa peringatan tertulis dan pengenaan denda administratif bagi BUJK yang terlambat melakukan pelaporan penggantian tenaga kerja konstruksi. Besaran denda administratif sebagaimana dimaksud pada ayat (1) sebesar: a. BUJK nasional kualifikasi kecil denda keterlambatan Rp500.000,00 (lima ratus ribu rupiah) per Hari; b. BUJK nasional kualifikasi menengah denda keterlambatan Rp1.000.000,00 (satu juta rupiah) per Hari; c. BUJK nasional bersifat spesialis denda keterlambatan Rp1.000.000,00 (satu juta rupiah) per Hari; d. BUJK nasional kualifikasi besar denda keterlambatan Rp1.500.000,00 (satu juta lima ratus ribu rupiah) per Hari; dan e. BUJKA kualifikasi besar dan/atau BUJKA bersifat spesialis denda keterlambatan Rp5.000.000,00 (lima juta rupiah) per Hari. Apabila BUJK tidak melakukan pembayaran denda administratif dalam jangka waktu 15 (lima belas) Hari sejak pengenaan sanksi peringatan tertulis dan pengenaan denda administratif sebagaimana dimaksud pada ayat (1), dikenai sanksi penghentian sementara kegiatan berusaha. Apabila BUJK tidak memenuhi kewajiban dalam jangka waktu 15 (lima belas) Hari sejak pengenaan sanksi sebagaimana dimaksud pada ayat (3), dikenai sanksi pencabutan SBU konstruksi."
+    },
+    {
+      "doc_id": "PP Nomor 5 Tahun 2021",
+      "pasal": "429",
+      "text": "Pemegang Perizinan Berusaha untuk menggunakan sumber daya air dikenakan pencabutan Perizinan Berusaha dilakukan dalam hal: a. pemegang Perizinan Berusaha tidak melaksanakan ketentuan dan kewajiban yang tercantum dalam Perizinan Berusaha; atau b. pemegang Perizinan Berusaha melakukan penyalahgunaan Perizinan Berusaha. Dalam hal Perizinan Berusaha memerlukan konstruksi pada sumber air, selain ketentuan pencabutan Perizinan Berusaha sebagaimana dimaksud pada ayat (1), pencabutan Perizinan Berusaha juga dilakukan apabila: a. pelaksanaan konstruksi tidak sesuai dengan ketentuan dalam Perizinan Berusaha; atau b. pemegang Perizinan Berusaha tidak melaksanakan konstruksi paling lama 2 (dua) tahun terhitung sejak ditetapkannya Perizinan Berusaha. Dalam hal pemegang Perizinan Berusaha tidak melaksanakan konstruksi dapat mengajukan penyesuaian jadwal pelaksanaan konstruksi sebelum jangka waktu 2 (dua) tahun terhitung sejak ditetapkannya Perizinan Berusaha. Perizinan Berusaha yang telah dilakukan penyesuaian jadwal pelaksanaan konstruksi sebagaimana dimaksud pada ayat (3), tetap berlaku sesuai jadwal pelaksanaan konstruksi yang telah disetujui."
+    },
+    {
+      "doc_id": "PP Nomor 5 Tahun 2021",
+      "pasal": "492",
+      "text": "Pelaku Usaha yang membuat, merakit, memasukkan alat dan/atau perangkat telekomunikasi untuk diperdagangkan dan/atau digunakan di wilayah Negara Kesatuan Republik Indonesia yang tidak memenuhi standar teknis, dikenai sanksi administratif berupa: a. denda administratif; b. pengenaan daya paksa polisional berupa penyitaan alat dan/atau perangkat telekomunikasi; c. pencabutan sertifikat alat dan/atau perangkat telekomunikasi; d. menarik kembali seluruh alat dan/atau perangkat telekomunikasi yang telah diperdagangkan dan/atau digunakan oleh masyarakat; dan/atau e. penghentian layanan sertifikat alat dan/atau perangkat telekomunikasi selama 1 (satu) tahun. Sanksi administratif sebagaimana dimaksud pada ayat (1) huruf a dan huruf b, dikenakan kepada Pelaku Usaha yang tidak memiliki sertifikat alat dan/atau perangkat telekomunikasi. Sanksi administratif sebagaimana dimaksud pada ayat (2) dikenai kepada Pelaku Usaha secara kumulatif dan bersamaan. Sanksi administratif sebagaimana dimaksud pada ayat (1) huruf a, huruf c, huruf d, dan huruf e dikenakan kepada Pelaku Usaha yang membuat, merakit, dan/atau memasukkan alat dan/atau perangkat telekomunikasi yang tidak sesuai dengan sertifikat alat dan/atau perangkat telekomunikasi yang dimiliki. Sanksi administratif sebagaimana dimaksud pada ayat (4) dikenakan kepada Pelaku Usaha secara alternatif dan/atau kumulatif, dengan ketentuan sebagai berikut: a. sanksi administratif berupa denda administratif, pencabutan sertifikat alat dan/atau perangkat telekomunikasi, dan menarik kembali seluruh alat dan/atau perangkat telekomunikasi yang telah diperdagangkan dan/atau digunakan oleh masyarakat sebagaimana dimaksud pada ayat (1) huruf a, huruf c, dan huruf d dikenai kepada Pelaku Usaha secara kumulatif dan berbarengan. b. pemegang sertifikat alat dan/atau perangkat telekomunikasi tidak menarik kembali seluruh alat dan/atau perangkat telekomunikasi yang telah diperdagangkan dan/atau digunakan oleh masyarakat sebagaimana dimaksud pada ayat (1) huruf d dalam jangka waktu yang ditentukan, dikenai sanksi administratif berupa penghentian layanan sertifikat alat dan/atau perangkat telekomunikasi selama 1 (satu) tahun sebagaimana dimaksud pada ayat (1) huruf e. Selain sanksi administratif sebagaimana dimaksud pada ayat (1), Pelaku Usaha yang tidak memiliki sertifikat alat dan/atau perangkat telekomunikasi dapat dikenai sanksi pidana sesuai dengan ketentuan peraturan perundang-undangan."
+    },
+    {
+      "doc_id": "PP Nomor 5 Tahun 2021",
+      "pasal": "502",
+      "text": "Pengenaan sanksi administratif sebagaimana dimaksud dalam Pasal 462 ayat (1) dan ayat (2), Pasal 463 ayat (1) dan ayat (2), Pasal 464, Pasal 465 ayat (1) dan ayat (2), Pasal 473 ayat (1), Pasal 475 ayat (1), Pasal 477 ayat (1), Pasal 478 ayat (1), Pasal 479 ayat (1), Pasal 480 ayat (1), Pasal 481 ayat (1), Pasal 482 ayat (1), Pasal 483 ayat (1), Pasal 484 ayat (1), Pasal 485 ayat (1), Pasal 486 ayat (1), Pasal 487 ayat (1), Pasal 488 ayat (1), Pasal 489 ayat (1), Pasal 490 ayat , Pasal 491 ayat (1), Pasal 492 ayat (1), Pasal 493 ayat (1), Pasal 494 ayat (1), Pasal 495, Pasal 496 ayat (1), Pasal 497 ayat (1), Pasal 499 ayat (1), dan Pasal 500 ayat (1) dilaksanakan oleh menteri yang menyelenggarakan urusan pemerintahan di bidang komunikasi dan informatika, Administrator KEK, dan kepala Badan Pengusahaan KPBPB sesuai ketentuan peraturan perundang-undangan. Ketentuan lebih lanjut mengenai tata cara pengenaan sanksi administratif, mekanisme, jangka waktu, banding administratif, dan pejabat yang berwenang diatur dengan peraturan menteri yang menyelenggarakan urusan pemerintahan di bidang komunikasi dan informatika."
+    },
+    {
+      "doc_id": "PP Nomor 5 Tahun 2021",
+      "pasal": "516",
+      "text": "Peringatan tertulis sebagaimana dimaksud dalam Pasal 515 ayat (1) huruf a dilakukan oleh perangkat daerah yang menyelenggarakan urusan pemerintahan di bidang ketenagakerjaan provinsi kepada perusahaan alih daya. Peringatan tertulis sebagaimana dimaksud pada ayat (1) dikenakan sebanyak 2 (dua) kali masing-masing untuk jangka waktu 3 (tiga) Hari terhitung sejak diterimanya peringatan tertulis dari perangkat daerah yang menyelenggarakan urusan pemerintahan di bidang ketenagakerjaan provinsi. Peringatan tertulis sebagaimana dimaksud pada ayat (1) dikenakan oleh perangkat daerah yang menyelenggarakan urusan pemerintahan di bidang ketenagakerjaan provinsi berdasarkan: a. rekomendasi dari perangkat daerah yang menyelenggarakan urusan pemerintahan di bidang ketenagakerjaan kabupaten/kota; atau b. tindak lanjut hasil Pengawasan ketenagakerjaan. Perangkat daerah yang menyelenggarakan urusan pemerintahan di bidang ketenagakerjaan provinsi mengenakan peringatan tertulis pertama, paling lama 3 (tiga) Hari sejak diterimanya rekomendasi atau tindak lanjut sebagaimana dimaksud pada ayat (3). Dalam hal jangka waktu pengenaan peringatan tertulis pertama telah habis dan perusahaan tidak memenuhi kewajibannya, perangkat daerah yang menyelenggarakan urusan pemerintahan di bidang ketenagakerjaan provinsi mengenakan peringatan tertulis kedua. Perusahaan alih daya yang tidak melaksanakan kewajiban setelah peringatan tertulis kedua sebagaimana dimaksud pada ayat (5), dikenakan sanksi penghentian sementara kegiatan usaha."
+    },
+    {
+      "doc_id": "PP Nomor 5 Tahun 2021",
+      "pasal": "544",
+      "text": "Dalam hal Perizinan Berusaha telah dicabut, Pelaku Usaha yang bersangkutan tetap berkewajiban untuk membayar sanksi administratif denda keterlambatan sebagai utang perusahaan kepada negara."
+    },
+    {
+      "doc_id": "PP Nomor 35 Tahun 2021",
+      "pasal": "24",
+      "text": "Dalam hal terdapat kebutuhan waktu kerja dan waktu istirahat selain yang telah ditetapkan oleh Menteri sebagaimana dimaksud dalam Pasal 23 ayat (3), Menteri dapat menetapkan waktu kerja dan waktu istirahat pada sektor usaha atau pekerjaan tertentu lainnya. Ketentuan lebih lanjut mengenai waktu kerja dan waktu istirahat pada sektor usaha atau pekerjaan tertentu lainnya sebagaimana dimaksud pada ayat (1) diatur dengan Peraturan Menteri."
+    },
+    {
+      "doc_id": "PP Nomor 35 Tahun 2021",
+      "pasal": "30",
+      "text": "Ketentuan Waktu Kerja Lembur berlaku untuk semua Perusahaan, kecuali bagi Perusahaan pada sektor usaha atau pekerjaan tertentu sebagaimana dimaksud dalam Pasal 23 ayat (3) dan Pasal24."
+    },
+    {
+      "doc_id": "PP Nomor 35 Tahun 2021",
+      "pasal": "32",
+      "text": "Perhitungan Upah Kerja Lembur didasarkan pada Upah bulanan. Cara menghitung Upah sejam yaitu I ll73 (satu per seratus tujuh puluh tiga) kali Upah sebulan. Dalam hal komponen Upah terdiri dari Upah pokok dan tunjangan tetap maka dasar perhitungan Upah Kerja Lembur lOOo/o (seratus persen) dari Upah. Dalam hal komponen Upah terdiri dari Upah pokok, tunjangan tetap, dan tunjangan tidak tetap, apabila Upah pokok ditambah tunjangan tetap lebih kecil dari 75o/o (tduh puluh lima persen) keseluruhan Upah maka dasar perhitungan Upah Kerja Lembur sama dengan 75% (tujuh puluh lima persen) dari keseluruhan Upah."
+    },
+    {
+      "doc_id": "PP Nomor 35 Tahun 2021",
+      "pasal": "35",
+      "text": "Perusahaan tertentu dapat memberikan istirahat panjang. Perusahaan tertentu sebagaimana dimaksud pada ayat (1) merupakan Perusahaan yang dapat memberikan istirahat panjang dan pelaksanaannya diatur dalam Perjanjian Kerja, Peraturan Perusahaan, atau Perjanjian Kerja Bersama."
+    },
+    {
+      "doc_id": "PP Nomor 35 Tahun 2021",
+      "pasal": "37",
+      "text": "Pengusaha, Pekerja/Buruh, Serikat Pekerja/Serikat Buruh, dan Pemerintah harus mengupayakan agar tidak terjadi Pemutusan Hubungan Kerja. Dalam hal Pemutusan Hubungan Kerja tidak dapat dihindari, maksud dan alasan Pemutusan Hubungan Kerja diberitahukan oleh Pengusaha kepada Pekerja/Buruh dan/atau Serikat Pekerja/Serikat Buruh di dalam Perusahaan apabila Pekerja/Buruh yang bersangkutan merupakan anggota dari Serikat Pekerja I Serikat Buruh. Pemberitahuan Pemutusan Hubungan Kerja dibuat dalam bentuk surat pemberitahuan dan disampaikan secara sah dan patut oleh Pengusaha kepada Pekerja/Buruh dan/atau Serikat PekerjalSerikat Buruh paling lama 14 (empat belas) hari kerja sebelum Pemutusan Hubungan Kerja. Dalam hal Pemutusan Hubungan Kerja dilakukan dalam masa percobaan, surat pemberitahuan disampaikan paling lama 7 (tu3uh) hari kerja sebelum Pemutusan Hubungan Kerja."
+    },
+    {
+      "doc_id": "PP Nomor 35 Tahun 2021",
+      "pasal": "41",
+      "text": "Pengusaha dapat melakukan Pemutusan Hubungan Kerja terhadap Pekerja/Buruh karena alasan Perusahaan melakukan penggabungan, peleburan atau pemisahan Perusahaan dan Pekerja/Buruh tidak bersedia melanjutkan Hubungan Kerja atau Pengusaha tidak bersedia menerima Pekerja/ Buruh maka Pekerja/Buruh berhak atas: uang pesangon Pasal 40 ayat (21; sebesar 1 (satu) kali ketentuan a. uang penghargaan masa kerja sebesar 1 (satu) kali ketentuan Pasal 40 ayat (3); dan b. uang penggantian hak sesuai ketentuan Pasal 40 ayat (4). C Pasal42..."
+    },
+    {
+      "doc_id": "PP Nomor 35 Tahun 2021",
+      "pasal": "48",
+      "text": "Pengusaha dapat melakukan Pemutusan Hubungan Kerja terhadap Pekerja/Buruh karena alasan adanya permohonan Pemutusan Hubungan Kerja yang diajukan oleh Pekerja/Buruh dengan alasan Pengusaha melakukan perbuatan sebagaimana yang dimaksud dalam Pasal 36 huruf g maka Pekerja/Buruh berhak atas: a. uang pesangon sebesar 1 (satu) kali ketentuan Pasal 40 ayat (2); b. uang penghargaan masa kerja sebesar 1 (satu) kali ketentuan Pasal 40 ayat (3); dan c. uang penggantian hak sesuai ketentuan Pasal 40 ayat (4)."
+    },
+    {
+      "doc_id": "PP Nomor 35 Tahun 2021",
+      "pasal": "49",
+      "text": "Pengusaha dapat melakukan Pemutusan Hubungan Kerja terhadap Pekerja/Buruh karena alasan adanya putusan lembaga penyelesaian perselisihan hubungan industrial yang menyatakan Pengusaha tidak melakukan perbuatan sebagaimana dimaksud dalam Pasal 36 huruf g terhadap permohonan yang diajukan oleh Pekerja/Buruh maka Pekerja/ Buruh berhak atas: a. uang penggantian hak sesuai ketentuan Pasal 40 ayat (4); dan b. uang pisah yang besarannya diatur dalam Perjanjian Kerja, Peraturan Perusahaan, atau Perjanjian Kerja Bersama."
+    },
+    {
+      "doc_id": "PP Nomor 35 Tahun 2021",
+      "pasal": "50",
+      "text": "Pekerja/Buruh yang mengundurkan diri atas kemauan sendiri dan memenuhi syarat sebagaimana dimaksud dalam Pasal 36 huruf i, berhak atas: a. uang penggantian hak sesuai ketentuan Pasal 40 ayat (4); dan b. uang pisah yang besarannya diatur dalam Perjanjian Kerja, Peraturan Perusahaan, atau Perjanjian Kerja Bersama."
+    },
+    {
+      "doc_id": "PP Nomor 35 Tahun 2021",
+      "pasal": "52",
+      "text": "Pengusaha dapat melakukan Pemutusan Hubungan Kerja terhadap Pekerja/Buruh karena alasan Pekerja/Buruh melakukan pelanggaran ketentuan yang diatur dalam Perjanjian Kerja, Peraturan Perusahaan, atau Perjanjian Kerja Bersama dan sebelumnya telah diberikan surat peringatan pertama, kedua, dan ketiga secara berturut-turut maka Pekerja/ Buruh berhak atas: a. uang pesangon sebesar 0,5 (nol koma lima) kali ketentuan Pasal 40 ayat (2); b. uang penghargaan masa kerja sebesar 1 (satu) kali ketentuan Pasal 40 ayat (3); dan c. uang penggantian hak sesuai ketentuan Pasal 40 ayat (4). Pengusaha dapat melakukan Pemutusan Hubungan Kerja terhadap Pekerja/Buruh karena alasan Pekerja/Buruh melakukan pelanggaran bersifat mendesak yang diatur dalam Perjanjian Kerja, Peraturan Perusahaan, atau Perjanjian Kerja Bersama maka Pekerja/Buruh berhak atas: a. uang penggantian hak sesuai ketentuan Pasal 40 ayat (4); dan b. uang pisah yang besarannya diatur dalam Perjanjian Kerja, Peraturan Perusahaan, atau Perjanjian Kerja Bersama. Pengusaha dapat melakukan Pemutusan Hubungan Kerja sebagaimana dimaksud pada ayat (2), tanpa pemberitahuan sebagaimana dimaksud dalam Pasal 37 ayat (21."
+    },
+    {
+      "doc_id": "PP Nomor 35 Tahun 2021",
+      "pasal": "54",
+      "text": "Pengusaha dapat melakukan Pemutusan Hubungan Kerja terhadap Pekerja/Buruh karena alasan Pekerja/Buruh tidak dapat melakukan pekerjaan selama 6 (enam) bulan akibat ditahan pihak yang berwajib karena diduga melakukan tindak pidana sebagaimana dimaksud dalam Pasal 36 huruf I yang menyebabkan kerugian Perusahaan maka Pekerja/Buruh berhak atas: uang penggantian hak sesuai ketentuan Pasal 40 ayat (4); dan a b. uang uang pisah yang besarannya diatur dalam Perjanjian Kerja, Peraturan Perusahaan, atau Perjanjian Kerja Bersama. b Pengusaha dapat melakukan Pemutusan Hubungan Kerja terhadap Pekerja/Buruh karena alasan Pekerja/Buruh tidak dapat melakukan pekerjaan selama 6 (enam) bulan akibat ditahan pihak yang berwajib karena diduga melakukan tindak pidana sebagaimana dimaksud dalam Pasal 36 huruf I yang tidak menyebabkan kerugian Perusahaan maka Pekerja/ Buruh berhak atas: a. uang penghargaan masa kerja sebesar 1 (satu) kali ketentuan Pasal 40 ayat (3); dan b. uang penggantian hak sesuai ketentuan Pasal 40 ayat (4). Dalam hal pengadilan memutuskan perkara pidana sebelum berakhirnya masa 6 (enam) bulan sebagaimana dimaksud pada ayat (2) dan Pekerja/Buruh dinyatakan tidak bersalah maka Pengusaha mempekerjakan Pekerja/ Buruh kembali. Dalam hal pengadilan memutuskan perkara pidana sebelum berakhirnya masa 6 (enam) bulan sebagaimana dimaksud pada ayat (1) dan Pekerja/Buruh dinyatakan bersalah maka Pengusaha dapat melakukan Pemutusan Hubungan Kerja dan Pekerja/ Buruh berhak atas: a. uang penggantian hak sesuai ketentuan Pasal 40 ayat (4); dan b. uang pisah yang besarannya diatur dalam Perjanjian Kerja, Peraturan Perusahaan, atau Perjanjian Kerja Bersama. Dalam hal pengadilan memutuskan perkara pidana sebelum berakhirnya masa 6 (enam) bulan sebagaimana dimaksud pada ayat (21 dan Pekerja/Buruh dinyatakan bersalah maka Pengusaha dapat melakukan Pemutusan Hubungan Kerja dan Pekerja/ Buruh berhak atas: a. uang penghargaan masa kerja sebesar 1 (satu) kali ketentuan Pasal 40 ayat (3); dan uang penggantian hak sesuai ketentuan Pasal 40 ayat (4). b"
+    },
+    {
+      "doc_id": "PP Nomor 35 Tahun 2021",
+      "pasal": "62",
+      "text": "Menteri, menteri terkait, gubernur, bupati/walikota, atau pejabat yang ditunjuk sesuai dengan kewenangannya mengenakan sanksi administratif sebagaimana dimaksud dalam Pasal 6L ayat (1) kepada Pengusaha. Pengenaan sanksi administratifdiberikan berdasarkan hasil pemeriksaan yang dilakukan oleh Pengawas Ketenagakerjaan yang berasal dari: a. pengaduan; dan/atau b. tindak lanjut hasil pengawasan ketenagakerjaan. Tindak lanjut hasil pemeriksaan yang dilakukan oleh Pengawas Ketenagakerjaan dituangkan dalam nota pemeriksaan. Dalam hal nota pemeriksaan tidak dilaksanakan oleh Pengusaha, Pengawas Ketenagakerjaan menyampaikan laporan ketidakpatuhan terhadap peraturan perundang-undangan beserta nota pemeriksaan kepada: a direktur jenderal yang membidangi pengawasan ketenagakerjaan pada kementerian yang menyelenggarakan urusan pemerintahan di bidang ketenagakerjaan, untuk Pengawas Ketenagakerjaan di kementerian yang menyelenggarakan urusan pemerintahan di bidang ketenagakerjaan; atau kepala dinas yang menyelenggarakan urusan pemerintahan di bidang ketenagakerjaan provinsi, untuk Pengawas Ketenagakerjaan pada dinas yang menyelenggarakan urusan pemerintahan di bidang ketenagakerjaan provinsi. b Direktur jenderal atau kepala dinas menyampaikan rekomendasi kepada pejabat yang berwenang mengenakan sanksi administratif. Menteri terkait, gubernur, bupati/walikota, atau pejabat yang ditunjuk memberitahukan pelaksanaan pengenaan sanksi administratif kepada Menteri."
+    },
+    {
+      "doc_id": "PP Nomor 35 Tahun 2021",
+      "pasal": "63",
+      "text": "Pada saat Peraturan Pemerintah ini mulai berlaku, PKWT yang telah ada dan jangka waktunya belum berakhir masih tetap berlaku sampai dengan berakhirnya PKWT."
+    },
+    {
+      "doc_id": "PP Nomor 35 Tahun 2021",
+      "pasal": "64",
+      "text": "Pada saat Peraturan Pemerintah ini mulai berlaku a. uang kompensasi untuk PKWT yang jangka waktunya belum berakhir diberikan sesuai dengan ketentuan daiam Peraturan Pemerintah ini; dan b besaran uang kompensasi sebagaimana dimaksud pada huruf a dihitung berdasarkan masa kerja Pekerja/Buruh yang perhitungannya dimulai sejak tanggal diundangkan Undang-Undang Nomor 11 Tahun 2O2O tentang Cipta Kerja."
+    },
+    {
+      "doc_id": "PP Nomor 35 Tahun 2021",
+      "pasal": "66",
+      "text": "Peraturan Pemerintah ini mulai berlaku pada tanggal diundangkan. Agar Diundangkan di Jakarta pada tanggal 2 Februari 2O2l MENTERI HUKUM DAN HAK ASASI MANUSIA REPUBLIK INDONESIA, ttd YASONNA H. LAOLY PRES iDEN REPUBLIK INDONESIA"
+    },
+    {
+      "doc_id": "PP Nomor 51 Tahun 2023",
+      "pasal": "24",
+      "text": "Upah minimum sebagaimana dimaksud dalam Pasal 23 ayat (1) berlaku bagi Pekerja/Buruh dengan masa kerja kurang dari 1 (satu) tahun pada Perusahaan yang bersangkutan. (1a) Pekerja/Buruh dengan masa kerja kurang dari 1 (satu) tahun sebagaimana dimaksud pada ayat (1) yang memiliki kualifikasi tertentu yang disyaratkan dalam jabatan dapat diberikan Upah lebih besar dari Upah minimum. Upah bagi Pekeda/Burr'h dengan masa kerja 1 (satu) tahun atau lebih berpedoman pada struktur dan skala Upah. Ketentuan ayat (1) dan ayat (3) Pasal 25 diubah dan ketentuan Pasal 25 ayat (4) dan ayat (5) dihapus, sehingga Pasal 25 berbunyi sebagai berikut: 2"
+    },
+    {
+      "doc_id": "PP Nomor 51 Tahun 2023",
+      "pasal": "27",
+      "text": "Gubernur wajib menetapkan Upah minimum provinsi setiap tahun. Penetapan Upah minimum provinsi sebagaimana dimaksud pada ayat (1) dilakukan dengan penyesuaian nilai Upah minimum. Penghitungan penyesuaian nilai Upah minimum provinsi dilakukan sesuai formula penghitungan Upah minimum sebagaimana dimaksud dalam Pasal 26 ayat (a) dan penghitungan nilai penyesuaian Upah minimum sebagaimana dimaksud dalam Pasal 26 ayat (51. Dalam hal nilai Upah minimum provinsi tahun berjalan melebihi rata-rata konsumsi rrrmah tangga dibagi rata-rata banyaknya anggota rumah tangga yang bekerja pada provinsi, penghitungan nilai penyesuaian Upah minimum provinsi sebagaimana dimaksud pada ayat (3) dilakukan sesuai ketentuan sebagaimana dimaksud dalam Pasal 26A ayat (ll."
+    },
+    {
+      "doc_id": "PP Nomor 51 Tahun 2023",
+      "pasal": "28",
+      "text": "Penghitungan penyesuaian nilai Upah minimum provinsi dilakukan oleh dewan pengupahan provinsi. Hasil penghitungan penyesuaian nilai Upah minimum provinsi sebagaimana dimaksud pada ayat (1) direkomendasikan kepada gubernur melalui dinas yang menyelenggarakan urusan pemerintahan di bidang ketenagakerjaan provinsi. Dalam hal hasil rekomendasi dewan pengupahan provinsi sebagaimana dimaksud pada ayat (21 tidak sesuai formula penghitungan Upah minimum, gubernur menetapkan Upah minimum provinsi dengan ketentuan: a. bagi daerah yang nilai Upah minimum provinsi pada tahun berjalan belum melebihi rata-rata konsumsi rumah tangga dibagi rata-rata banyaknya anggota rrrmah tangga yang bekerja pada provinsi, Upah minimum provinsi ditetapkan berdasarkan formula penghitungan Upah minimum sebagaimana dimaksud dalam Pasal 26 ayat (41 dan penghitungan nilai penyesuaian Upah minimum sebagaimana dimaksud dalam Pasal 26 ayat (5); atau b. bagi daerah yang nilai Upah minimum provinsi pada tahun berjalan melebihi rata-rata konsumsi rumah tangga dibagi rata-rata banyaknya anggota rumah tangga yang bekerja pada provinsi, Upah minimum provinsi ditetapkan berdasarkan formula penghitungan Upah minimum sebagaimana dimaksud dalam Pasal 26 ayat (4) dan penghitungan nilai penyesuaian Upah minimum sebagaimana dimaksud dalam Pasal 26A ayat (ll."
+    },
+    {
+      "doc_id": "PP Nomor 51 Tahun 2023",
+      "pasal": "30",
+      "text": "Gubernur dapat menetapkan kabupaten/kota. Upah minimum Penetapan Upah minimum sebagaimana dimaksud pada dilakukan bagi: kabupaten/kota ayat (1) dapat a. kabupaten/kota yang belum minimum; memiliki Upah b. kabupatenlkota yang telah memiliki minimum; Upah c. kabupatenlkota hasil pemekaran; atau d. kabupatenlkota yang telah memiliki minimum pada provinsi hasil pemekaran. Upah 10. Ketentuan ayat (21 Pasal 31 diubah sehingga berbunyi sebagai berikut:"
+    },
+    {
+      "doc_id": "PP Nomor 51 Tahun 2023",
+      "pasal": "31",
+      "text": "Upah minimum kabupatenlkota ditetapkan setelah penetapan Upah minimum provinsi. Penetapan Upah minimum kabupatenlkota sebagaimana dimaksud pada ayat (1) dilakukan dalam hal hasil penghitungan Upah minimum kabupaten/kota lebih tinggi dari Upah minimum provinsi."
+    },
+    {
+      "doc_id": "PP Nomor 51 Tahun 2023",
+      "pasal": "31A",
+      "text": "Penetapan Upah minimum bagi kabupaten/kota yang belum memiliki Upah minimum sebagaimana dimaksud dalam Pasal 30 ayat (2) huruf a harus memenuhi syarat tertentu. Syarat tertentu sebagaimana dimaksud pada ayat (1) yaitu: a. rata-rata pertumbuhan ekonomi kabupaten/kota yang bersangkutan selama 3 (tiga) tahun terakhir dari data yang tersedia pada periode yang sama, lebih tinggi dibandingkan rata-rata pertumbuhan ekonomi provinsi; atau b. nilai pertumbuhan ekonomi dikurangi inflasi kabupaten/kota yang bersangkutan selama 3 (tiga) tahun terakhir dari data yang tersedia pada periode yang sama, selalu positif, dan lebih tinggi dari nilai provinsi. Dalam hal syarat tertentu sebagaimana dimaksud pada ayat (2) tidak terpenuhi, gubernur tidak dapat menetapkan Upah minimum bagi kabupaten/kota yang bersangkutan. Data pertumbuhan ekonomi dan inflasi sebagaimana dimaksud pada ayat (21bersumber dari lembaga yang berwenang di bidang statistik."
+    },
+    {
+      "doc_id": "PP Nomor 51 Tahun 2023",
+      "pasal": "31B",
+      "text": "Penghitungan Upah minimum bagi kabupaten/kota yang belum memiliki Upah minimum kabupatenlkota sebagaimana dimaksud dalam Pasal 30 ayat (2) huruf a, menggunakan formula penghitungan Upah minimum. Formula penghitungan Upah minimum sebagaimana dimaksud pada ayat (1) berdasarkan kondisi ekonomi dan ketenagakerjaan yang memuat variabel: a. paritas daya beli; b. tingkat penyerapan tenaga kerja; dan c. median Upah. Data paritas daya beli, tingkat penyerapan tenaga kerja, dan median Upah sebagaimana dimaksud pada ayat (2) bersumber dari lembaga yang berwenang di bidang statistik. 12. Ketentuan ayat (1) huruf a Pasal 32 diubah dan ketentuan Pasal 32 ayat (3) dihapus, sehingga Pasal 32 berbunyi sebagai berikut:"
+    },
+    {
+      "doc_id": "PP Nomor 51 Tahun 2023",
+      "pasal": "33",
+      "text": "Penghitungan nilai Upah minimum kabupaten/kota dilakukan oleh dewan pengupahan kabupaten/kota sesuai dengan formula sebagaimana dimaksud dalam Pasal 32. Hasil penghitungan Upah minimum kabupaten/kota sebagaimana dimaksud pada ayat (1) disampaikan kepada bupati/wali kota. Dalam hal hasil penghitungan Upah minimum kabupatenlkota sama atau lebih rendah dari Upah minimum provinsi, bupati/wali kota tidak dapat merekomendasikan nilai Upah minimum kabupate n I kota kepada gubernur. Dalam hal hasil penghitungan Upah minimum kabupaten/kota lebih tinggi dari Upah minimum provinsi, bupati/wali kota merekomendasikan hasil penghitungan Upah minimum kabupatenlkota kepada gubernur melalui dinas yang menyelenggarakan urusan pemerintahan di bidang ketenagakerj aan provinsi. Gubernur menetapkan Upah minimum kabupatenlkota berdasarkan rekomendasi dari bupati/wali kota sebagaimana dimaksud pada ayat (4). Dalam hal hasil rekomendasi bupati/wali kota sebagaimana dimaksud pada ayat (4) tidak sesuai formula penghitungan Upah minimum, gubernur tidak dapat menetapkan Upah minimum kabupaten/kota."
+    },
+    {
+      "doc_id": "PP Nomor 51 Tahun 2023",
+      "pasal": "34A",
+      "text": "Gubernur meminta saran dan pertimbangan dewan pengupahan provinsi dalam menetapkan Upah minimum kabupatenlkota yang direkomendasikan oleh bupati/wali kota sebagaimana dimaksud dalam Pasal 34 ayat (5). Dalam hal Upah minimum kabupatenlkota yang direkomendasikan oleh bupatilwali kota tidak sesuai formula penghitungan Upah minimum, gubernur: a. menetapkan Upah minimum kabupaten/kota yang nilainya sesuai dengan nilai Upah minimum kabupaten I kota tahun berjalan; atau b. menetapkan Upah minimum kabupaten/kota: 1) bagi daerah yang nilai Upah minimum kabupatenlkota pada tahun berjalan belum melebihi rata-rata konsumsi rumah tangga dibagi rata-rata banyaknya anggota rumah tangga yang bekerja pada kabupatenfkota, Upah minimum kabupatenlkota ditetapkan berdasarkan formula penghitungan Upah minimum sebagaimana dimaksud dalam Pasal 26 ayat (a) dan penghitungan nilai penyesuaian Upah minimum sebagaimana dimaksud dalam Pasal 26 ayat (5); atau 2l bagi daerah yang nilai Upah minimum kabupatenlkota pada tahun berjalan melebihi rata-rata konsumsi rumah tangga dibagi rata-rata banyaknya anggota rumah tangga yang bekerja pada kabupatenfkota, Upah minimum kabupatenlkota ditetapkan berdasarkan formula penghitungan Upah minimum sebagaimana dimaksud dalam Pasal 26 ayat (4) dan penghitungan nilai penyesuaian Upah minimum sebagaimana dimaksud dalam Pasal 26A ayat (11."
+    },
+    {
+      "doc_id": "PP Nomor 51 Tahun 2023",
+      "pasal": "35",
+      "text": "Dihapus. (2t Upah minimum kabupaten/kota ditetapkan dengan Keputusan Gubernur dan diumumkan paling lambat pada tanggal 30 November tahun berjalan. Dalam hal tanggal 30 November jatuh pada hari Minggu, hari libur nasional, atau hari libur resmi, Upah minimum kabupaten/kota ditetapkan dan diumumkan oleh gubernur atau penjabat gubernur 1 (satu) hari sebelum hari Minggu, hari libur nasional, atau hari libur resmi. Upah minimum kabupatenlkota sebagaimana dimaksud pada ayat(2) dan ayat (3) berlaku terhitung mulai tanggal 1 Januari tahun berikutnya. (41 Pelaksanaan ketentuan sebagaimana dimaksud pada ayat (21dan ayat (3) tidak boleh bertentangan dengan kebijakan pengupahan sebagaimana dimaksud dalam Pasal 4. (s) 17. Setelah huruf c ayat (2) Pasal 7l ditambahkan 1 (satu) hur-uf, yakni huruf d dan setelah hurrrf b ayat (3) Pasal 7l ditambahkan 1 (satu) huruf, yakni huruf c sehingga berbunyi sebagai berikut:"
+    }
+  ]
+}

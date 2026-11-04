@@ -5,6 +5,17 @@ description: Measure and compare Legal Atlas retrieval quality (hit@k, MRR) befo
 
 # Evaluate a retrieval change
 
+## Two question sets — never tune on test
+
+- `data/evaluation/dev.json` (`legal-rag evaluate`) — the development set. Tune and debug here.
+- `data/evaluation/test.json` (`legal-rag evaluate --split test`) — held out, frozen and
+  pre-registered in `data/evaluation/README.md`. Run it only after a change is final, report the
+  result whatever it is, and never pick a setting because it scores better on test. A test in
+  `tests/test_stats.py` fails if the file is edited.
+- `legal-rag experiments` reruns the weight sweep, leave-one-document-out CV, ablations, overlap
+  analysis, error analysis and latency → `reports/experiments.json` (~5 min on CPU, re-encodes the
+  corpus once). Update `docs/technical_report.md` when its numbers change.
+
 ## Baseline first
 
 `reports/evaluation.json` is overwritten by every run, so save the baseline before touching code:
@@ -31,6 +42,11 @@ for run in after["runs"]:
     print(f"{run:16}", "  ".join(f"{k} {b[k]:.3f}→{a[k]:.3f}" for k in a))
 ```
 
+Each report also carries 95 % bootstrap intervals (`ci95`) and Holm-corrected paired tests of
+the served configuration against each baseline (`comparisons`). A change whose before/after
+difference sits inside the interval is not evidence of improvement; for a paired before/after
+test use `legal_rag.stats.paired_permutation_test` on `per_question(ranks)["mrr@5"]`.
+
 `hybrid_articles` is the configuration the demo serves; the others are baselines.
 
 ## Diagnose failures
@@ -47,9 +63,9 @@ classify:
 
 ## Reporting rules
 
-- Always show before → after for hit@1, hit@3, hit@5, MRR@5 with the question count (currently 40).
-  With 40 questions one question moves hit@k by 0.025 — call out changes that small as noise.
+- Always show before → after for hit@1, hit@3, hit@5, MRR@5 with the question count (currently 40
+  per split) and the 95 % CI. One question moves hit@k by 0.025 — call changes that small noise.
 - The dev set is not held out. If you tuned `SEMANTIC_WEIGHT` or similar on it, say so and
-  record the sweep (as in `reports/weight_tuning.json`) instead of reporting only the best value.
+  record the sweep (`weight_sweep` in `reports/experiments.json`) instead of only the best value.
 - Do not edit expected answers to make a change look better.
 - Commit `reports/evaluation.json` together with the code change that produced it.

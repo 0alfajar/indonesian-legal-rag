@@ -20,21 +20,30 @@ measured, not assumed.
 | **Hybrid retrieval** | `multilingual-e5-base` dense vectors + BM25, min-max weighted fusion (0.7 / 0.3) with RRF as a baseline; deduplicated to one hit per article |
 | **Evidence expansion** | Retrieved ayat are expanded with sibling ayat of the same Pasal so conditions in neighbouring paragraphs are not lost |
 | **Source-bound generation** | Gemini is constrained by a JSON schema; each statement must cite known source IDs, inline `[S#]` markers are cross-checked, and invalid answers are rejected rather than shown |
-| **Reproducible evaluation** | 40-question dev set, hit@k / MRR across six retrieval configurations, dataset and corpus fingerprints recorded in every report |
+| **Held-out, pre-registered evaluation** | Randomly sampled 40-question test set frozen (hash + analysis plan) before its first run; bootstrap CIs, paired permutation tests with Holm correction, cross-validated weight selection, ablations and error analysis — see the [technical report](docs/technical_report.md) |
 | **Integrity-checked index** | Versioned vector artefacts behind an atomic manifest with SHA-256 checksums and a chunk fingerprint that detects stale indexes |
 
 ## Results
 
-Article-level retrieval on [`data/evaluation/dev.json`](data/evaluation/dev.json) (40 questions, 3 regulations), from [`reports/evaluation.json`](reports/evaluation.json):
+Article-level retrieval, served configuration in bold. 95 % bootstrap CIs in brackets.
+Full write-up, including what did **not** work: [docs/technical_report.md](docs/technical_report.md).
 
-| Method | hit@1 | hit@3 | hit@5 | MRR@5 |
+| Method | Dev MRR@5 | Test MRR@5 | Test hit@1 | Test hit@5 |
 |---|---:|---:|---:|---:|
-| BM25 | 0.450 | 0.700 | 0.825 | 0.594 |
-| Dense (E5) | 0.575 | 0.750 | 0.800 | 0.671 |
-| RRF (dense + BM25) | 0.575 | 0.825 | 0.875 | 0.700 |
-| **Hybrid 0.7 / 0.3** | **0.600** | **0.825** | **0.925** | **0.733** |
+| BM25 | 0.594 | 0.777 [0.67, 0.88] | 0.675 | 0.950 |
+| Dense (E5) | 0.671 | 0.667 [0.55, 0.78] | 0.525 | 0.875 |
+| RRF (dense + BM25) | 0.700 | 0.771 [0.66, 0.88] | 0.675 | 0.925 |
+| **Hybrid 0.7 / 0.3** | **0.733** | **0.822** [0.71, 0.92] | **0.750** | 0.925 |
 
-The dev set was written alongside development, so treat these as development numbers rather than held-out evidence.
+- *Dev* ([`dev.json`](data/evaluation/dev.json)) was written during development and used to tune the
+  fusion weight; *test* ([`test.json`](data/evaluation/test.json)) is a random sample of articles,
+  frozen and pre-registered in [`data/evaluation/README.md`](data/evaluation/README.md) before it was run.
+- Hybrid beats dense-only significantly on test (+0.155 MRR@5, Holm p = 0.006) but is **not**
+  significantly better than BM25 alone on either split.
+- Tuning the weight on dev overstates MRR@5 by ~0.06 (leave-one-document-out CV); any weight in
+  0.4–0.7 performs the same within noise. Remaining errors all pick a neighbouring or
+  cross-referenced article of the right regulation.
+- CPU latency: p50 81 ms, p95 119 ms per query (1,814 passages).
 
 ## Architecture
 
@@ -100,7 +109,9 @@ The prebuilt index ships with the repo, so no ingestion is needed to try it. The
 legal-rag search "ketentuan upah minimum" --top-k 5
 legal-rag search "kompensasi PKWT" --document "PP Nomor 35 Tahun 2021" --pasal 15
 legal-rag ask "Kapan pekerja PKWT berhak memperoleh uang kompensasi?"
-legal-rag evaluate                                  # rewrites reports/evaluation.json
+legal-rag evaluate                                  # dev set  → reports/evaluation.json
+legal-rag evaluate --split test                     # held-out → reports/evaluation_test.json
+legal-rag experiments                               # sweep, CV, ablations, errors → reports/experiments.json
 ```
 
 ### Rebuilding the corpus
@@ -139,7 +150,8 @@ See [docs/contributing.md](docs/contributing.md). Claude Code users get project 
 
 - Three regulations, not a consolidated or current body of law; amendments are not merged into their base texts.
 - Citation validation proves that a statement cites a retrieved passage, not that the legal conclusion is correct.
-- Evaluation is retrieval-only; answer faithfulness needs a separately reviewed set.
+- Evaluation is retrieval-only, on 40 + 40 questions with one gold article each; test questions are
+  LLM-drafted from the article text and not yet expert-reviewed. Answer faithfulness is not measured.
 - Not legal advice.
 
 ## License

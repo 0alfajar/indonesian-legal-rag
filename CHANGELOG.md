@@ -5,6 +5,23 @@ All notable changes to Legal Atlas will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+- Held-out test set (`data/evaluation/test.json`): 40 questions on randomly sampled articles
+  (`scripts/sample_test_articles.py`, seed 20261104), frozen and pre-registered with an analysis
+  plan in `data/evaluation/README.md`; `legal-rag evaluate --split test`.
+- `stats.py`: bootstrap CIs, paired permutation test, Holm correction, Spearman.
+- Evaluation reports now include 95 % CIs, per-document metrics, and Holm-corrected paired tests
+  of the served configuration against each baseline.
+- `legal-rag experiments` → `reports/experiments.json`: weight sweep, leave-one-document-out CV of
+  weight selection, heading/prefix ablations, lexical-overlap analysis, error analysis, latency.
+- `docs/technical_report.md`.
+
+### Removed
+- `reports/weight_tuning.json`, superseded by `weight_sweep` in `reports/experiments.json`
+  (identical dev numbers).
+
 ## [0.2.0] - 2026-10-29
 
 ### Added

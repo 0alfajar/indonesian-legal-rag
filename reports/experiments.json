@@ -1,0 +1,760 @@
+{
+  "created_at": "2026-11-04T08:54:59.615304+00:00",
+  "model": "intfloat/multilingual-e5-base",
+  "served_semantic_weight": 0.7,
+  "dataset_sha256": {
+    "dev": "c37efbcaac6a456d1320080e2fc28a13020e51c18bf4ee50d65da2c6c0fc57c8",
+    "test": "c52627c7389c41020e874fec317e54fe0a846804c69fdbd3f01acc9051985c8e"
+  },
+  "corpus_sha256": "c384b01638516bc817162bd896b389a1cbb1a99fcb914986efe8fbf824cc0bae",
+  "weight_sweep": {
+    "dev": {
+      "0.0": {
+        "hit@1": 0.45,
+        "hit@3": 0.7,
+        "hit@5": 0.825,
+        "mrr@5": 0.5941666666666666
+      },
+      "0.1": {
+        "hit@1": 0.475,
+        "hit@3": 0.7,
+        "hit@5": 0.825,
+        "mrr@5": 0.6066666666666667
+      },
+      "0.2": {
+        "hit@1": 0.5,
+        "hit@3": 0.725,
+        "hit@5": 0.875,
+        "mrr@5": 0.635
+      },
+      "0.3": {
+        "hit@1": 0.525,
+        "hit@3": 0.825,
+        "hit@5": 0.925,
+        "mrr@5": 0.6766666666666666
+      },
+      "0.4": {
+        "hit@1": 0.6,
+        "hit@3": 0.85,
+        "hit@5": 0.925,
+        "mrr@5": 0.7270833333333333
+      },
+      "0.5": {
+        "hit@1": 0.65,
+        "hit@3": 0.875,
+        "hit@5": 0.925,
+        "mrr@5": 0.76125
+      },
+      "0.6": {
+        "hit@1": 0.55,
+        "hit@3": 0.875,
+        "hit@5": 0.95,
+        "mrr@5": 0.7204166666666667
+      },
+      "0.7": {
+        "hit@1": 0.6,
+        "hit@3": 0.825,
+        "hit@5": 0.925,
+        "mrr@5": 0.7333333333333334
+      },
+      "0.8": {
+        "hit@1": 0.6,
+        "hit@3": 0.775,
+        "hit@5": 0.95,
+        "mrr@5": 0.73
+      },
+      "0.9": {
+        "hit@1": 0.6,
+        "hit@3": 0.825,
+        "hit@5": 0.9,
+        "mrr@5": 0.7229166666666667
+      },
+      "1.0": {
+        "hit@1": 0.575,
+        "hit@3": 0.75,
+        "hit@5": 0.8,
+        "mrr@5": 0.6708333333333333
+      }
+    },
+    "test": {
+      "0.0": {
+        "hit@1": 0.675,
+        "hit@3": 0.85,
+        "hit@5": 0.95,
+        "mrr@5": 0.7766666666666666
+      },
+      "0.1": {
+        "hit@1": 0.675,
+        "hit@3": 0.875,
+        "hit@5": 0.95,
+        "mrr@5": 0.7775000000000001
+      },
+      "0.2": {
+        "hit@1": 0.7,
+        "hit@3": 0.875,
+        "hit@5": 0.95,
+        "mrr@5": 0.7899999999999999
+      },
+      "0.3": {
+        "hit@1": 0.7,
+        "hit@3": 0.875,
+        "hit@5": 0.925,
+        "mrr@5": 0.7933333333333332
+      },
+      "0.4": {
+        "hit@1": 0.775,
+        "hit@3": 0.875,
+        "hit@5": 0.925,
+        "mrr@5": 0.835
+      },
+      "0.5": {
+        "hit@1": 0.75,
+        "hit@3": 0.875,
+        "hit@5": 0.95,
+        "mrr@5": 0.8300000000000001
+      },
+      "0.6": {
+        "hit@1": 0.775,
+        "hit@3": 0.9,
+        "hit@5": 0.925,
+        "mrr@5": 0.8354166666666668
+      },
+      "0.7": {
+        "hit@1": 0.75,
+        "hit@3": 0.9,
+        "hit@5": 0.925,
+        "mrr@5": 0.8216666666666665
+      },
+      "0.8": {
+        "hit@1": 0.65,
+        "hit@3": 0.9,
+        "hit@5": 0.925,
+        "mrr@5": 0.7729166666666666
+      },
+      "0.9": {
+        "hit@1": 0.625,
+        "hit@3": 0.85,
+        "hit@5": 0.95,
+        "mrr@5": 0.75
+      },
+      "1.0": {
+        "hit@1": 0.525,
+        "hit@3": 0.825,
+        "hit@5": 0.875,
+        "mrr@5": 0.6666666666666667
+      }
+    }
+  },
+  "weight_selection": {
+    "folds": [
+      {
+        "held_out": "PP Nomor 35 Tahun 2021",
+        "questions": 15,
+        "selected_weight": 0.5,
+        "train_mrr@5": 0.7046666666666667,
+        "held_out_mrr@5": 0.8555555555555556
+      },
+      {
+        "held_out": "PP Nomor 5 Tahun 2021",
+        "questions": 15,
+        "selected_weight": 0.4,
+        "train_mrr@5": 0.7933333333333333,
+        "held_out_mrr@5": 0.6166666666666667
+      },
+      {
+        "held_out": "PP Nomor 51 Tahun 2023",
+        "questions": 10,
+        "selected_weight": 0.7,
+        "train_mrr@5": 0.7833333333333333,
+        "held_out_mrr@5": 0.5833333333333333
+      }
+    ],
+    "cross_validated": {
+      "hit@1": {
+        "mean": 0.575,
+        "ci95": [
+          0.425,
+          0.725
+        ]
+      },
+      "hit@3": {
+        "mean": 0.825,
+        "ci95": [
+          0.7,
+          0.925
+        ]
+      },
+      "hit@5": {
+        "mean": 0.9,
+        "ci95": [
+          0.8,
+          0.975
+        ]
+      },
+      "mrr@5": {
+        "mean": 0.6979166666666666,
+        "ci95": [
+          0.5791666666666667,
+          0.8104166666666666
+        ]
+      }
+    },
+    "full_dev_selected_weight": 0.5,
+    "in_sample_best_mrr@5": 0.76125,
+    "optimism_mrr@5": 0.06333333333333335,
+    "selected_weight_on_test": {
+      "hit@1": {
+        "mean": 0.75,
+        "ci95": [
+          0.6,
+          0.875
+        ]
+      },
+      "hit@3": {
+        "mean": 0.875,
+        "ci95": [
+          0.775,
+          0.975
+        ]
+      },
+      "hit@5": {
+        "mean": 0.95,
+        "ci95": [
+          0.875,
+          1.0
+        ]
+      },
+      "mrr@5": {
+        "mean": 0.8300000000000001,
+        "ci95": [
+          0.7274999999999999,
+          0.9237500000000001
+        ]
+      }
+    },
+    "served_weight_on_test": {
+      "hit@1": {
+        "mean": 0.75,
+        "ci95": [
+          0.6,
+          0.875
+        ]
+      },
+      "hit@3": {
+        "mean": 0.9,
+        "ci95": [
+          0.8,
+          0.975
+        ]
+      },
+      "hit@5": {
+        "mean": 0.925,
+        "ci95": [
+          0.825,
+          1.0
+        ]
+      },
+      "mrr@5": {
+        "mean": 0.8216666666666665,
+        "ci95": [
+          0.7141666666666666,
+          0.9166666666666667
+        ]
+      }
+    }
+  },
+  "ablations": {
+    "dev": {
+      "served (hybrid 0.7, headings, query prefix)": {
+        "metrics": {
+          "hit@1": 0.6,
+          "hit@3": 0.825,
+          "hit@5": 0.925,
+          "mrr@5": 0.7333333333333334
+        }
+      },
+      "- headings in BM25 text": {
+        "metrics": {
+          "hit@1": 0.575,
+          "hit@3": 0.85,
+          "hit@5": 0.95,
+          "mrr@5": 0.7266666666666667
+        },
+        "vs_served": {
+          "mean_difference": -0.006666666666666668,
+          "ci95": [
+            -0.07166666666666667,
+            0.05583333333333333
+          ],
+          "p_value": 0.847015298470153,
+          "wins": 6,
+          "losses": 5,
+          "ties": 29,
+          "p_holm": 1.0
+        }
+      },
+      "- headings in dense passages": {
+        "metrics": {
+          "hit@1": 0.675,
+          "hit@3": 0.875,
+          "hit@5": 0.975,
+          "mrr@5": 0.7908333333333333
+        },
+        "vs_served": {
+          "mean_difference": 0.057499999999999996,
+          "ci95": [
+            0.0024999999999999966,
+            0.11625
+          ],
+          "p_value": 0.063993600639936,
+          "wins": 8,
+          "losses": 3,
+          "ties": 29,
+          "p_holm": 0.31996800319968
+        }
+      },
+      "- headings everywhere": {
+        "metrics": {
+          "hit@1": 0.625,
+          "hit@3": 0.825,
+          "hit@5": 0.925,
+          "mrr@5": 0.7420833333333333
+        },
+        "vs_served": {
+          "mean_difference": 0.008749999999999999,
+          "ci95": [
+            -0.08541666666666667,
+            0.09666666666666665
+          ],
+          "p_value": 0.8728127187281272,
+          "wins": 8,
+          "losses": 6,
+          "ties": 26,
+          "p_holm": 1.0
+        }
+      },
+      "- E5 'query: ' prefix": {
+        "metrics": {
+          "hit@1": 0.625,
+          "hit@3": 0.825,
+          "hit@5": 0.925,
+          "mrr@5": 0.7445833333333333
+        },
+        "vs_served": {
+          "mean_difference": 0.01125,
+          "ci95": [
+            -0.03625,
+            0.06417708333333319
+          ],
+          "p_value": 0.7468253174682532,
+          "wins": 3,
+          "losses": 3,
+          "ties": 34,
+          "p_holm": 1.0
+        }
+      },
+      "dense only, - headings": {
+        "metrics": {
+          "hit@1": 0.65,
+          "hit@3": 0.775,
+          "hit@5": 0.875,
+          "mrr@5": 0.72375
+        },
+        "vs_served": {
+          "mean_difference": -0.009583333333333333,
+          "ci95": [
+            -0.12752083333333314,
+            0.10625
+          ],
+          "p_value": 0.8947105289471053,
+          "wins": 8,
+          "losses": 9,
+          "ties": 23,
+          "p_holm": 1.0
+        }
+      },
+      "BM25 only, - headings": {
+        "metrics": {
+          "hit@1": 0.425,
+          "hit@3": 0.725,
+          "hit@5": 0.8,
+          "mrr@5": 0.5716666666666667
+        },
+        "vs_served": {
+          "mean_difference": -0.16166666666666668,
+          "ci95": [
+            -0.2979166666666667,
+            -0.02541666666666667
+          ],
+          "p_value": 0.0254974502549745,
+          "wins": 8,
+          "losses": 16,
+          "ties": 16,
+          "p_holm": 0.152984701529847
+        }
+      }
+    },
+    "test": {
+      "served (hybrid 0.7, headings, query prefix)": {
+        "metrics": {
+          "hit@1": 0.75,
+          "hit@3": 0.9,
+          "hit@5": 0.925,
+          "mrr@5": 0.8216666666666665
+        }
+      },
+      "- headings in BM25 text": {
+        "metrics": {
+          "hit@1": 0.725,
+          "hit@3": 0.925,
+          "hit@5": 0.925,
+          "mrr@5": 0.8208333333333332
+        },
+        "vs_served": {
+          "mean_difference": -0.0008333333333333332,
+          "ci95": [
+            -0.06,
+            0.055854166666666365
+          ],
+          "p_value": 1.0,
+          "wins": 4,
+          "losses": 3,
+          "ties": 33,
+          "p_holm": 1.0
+        }
+      },
+      "- headings in dense passages": {
+        "metrics": {
+          "hit@1": 0.725,
+          "hit@3": 0.85,
+          "hit@5": 0.9,
+          "mrr@5": 0.7875
+        },
+        "vs_served": {
+          "mean_difference": -0.034166666666666665,
+          "ci95": [
+            -0.11256249999999945,
+            0.034583333333333334
+          ],
+          "p_value": 0.43625637436256376,
+          "wins": 3,
+          "losses": 4,
+          "ties": 33,
+          "p_holm": 1.0
+        }
+      },
+      "- headings everywhere": {
+        "metrics": {
+          "hit@1": 0.725,
+          "hit@3": 0.875,
+          "hit@5": 0.925,
+          "mrr@5": 0.8029166666666667
+        },
+        "vs_served": {
+          "mean_difference": -0.01875,
+          "ci95": [
+            -0.11166666666666666,
+            0.06791666666666667
+          ],
+          "p_value": 0.722027797220278,
+          "wins": 5,
+          "losses": 5,
+          "ties": 30,
+          "p_holm": 1.0
+        }
+      },
+      "- E5 'query: ' prefix": {
+        "metrics": {
+          "hit@1": 0.725,
+          "hit@3": 0.9,
+          "hit@5": 0.925,
+          "mrr@5": 0.8091666666666665
+        },
+        "vs_served": {
+          "mean_difference": -0.0125,
+          "ci95": [
+            -0.0625,
+            0.025
+          ],
+          "p_value": 1.0,
+          "wins": 1,
+          "losses": 2,
+          "ties": 37,
+          "p_holm": 1.0
+        }
+      },
+      "dense only, - headings": {
+        "metrics": {
+          "hit@1": 0.6,
+          "hit@3": 0.775,
+          "hit@5": 0.825,
+          "mrr@5": 0.68625
+        },
+        "vs_served": {
+          "mean_difference": -0.13541666666666669,
+          "ci95": [
+            -0.23625,
+            -0.04333333333333333
+          ],
+          "p_value": 0.0091990800919908,
+          "wins": 3,
+          "losses": 11,
+          "ties": 26,
+          "p_holm": 0.0551944805519448
+        }
+      },
+      "BM25 only, - headings": {
+        "metrics": {
+          "hit@1": 0.65,
+          "hit@3": 0.85,
+          "hit@5": 0.9,
+          "mrr@5": 0.7570833333333333
+        },
+        "vs_served": {
+          "mean_difference": -0.06458333333333333,
+          "ci95": [
+            -0.19208333333333333,
+            0.060416666666666674
+          ],
+          "p_value": 0.3357664233576642,
+          "wins": 7,
+          "losses": 8,
+          "ties": 25,
+          "p_holm": 1.0
+        }
+      }
+    }
+  },
+  "lexical_overlap": {
+    "dev": {
+      "mean": 0.7368017399267399,
+      "median": 0.7638888888888888,
+      "spearman_with_bm25_rr": -0.09572933378818352,
+      "spearman_with_dense_rr": -0.03642850777495109,
+      "per_question": {
+        "pp5_q01": 0.714,
+        "pp5_q02": 0.833,
+        "pp5_q03": 0.625,
+        "pp5_q04": 0.8,
+        "pp5_q05": 0.857,
+        "pp5_q06": 1.0,
+        "pp5_q07": 0.889,
+        "pp5_q08": 1.0,
+        "pp5_q09": 0.875,
+        "pp5_q10": 0.875,
+        "pp5_q11": 0.889,
+        "pp5_q12": 0.875,
+        "pp5_q13": 0.917,
+        "pp5_q14": 0.667,
+        "pp5_q15": 0.4,
+        "pp35_q01": 0.25,
+        "pp35_q02": 0.9,
+        "pp35_q03": 0.778,
+        "pp35_q04": 0.667,
+        "pp35_q05": 0.667,
+        "pp35_q06": 0.75,
+        "pp35_q07": 0.7,
+        "pp35_q08": 0.833,
+        "pp35_q09": 0.833,
+        "pp35_q10": 0.6,
+        "pp35_q11": 0.5,
+        "pp35_q12": 0.778,
+        "pp35_q13": 0.7,
+        "pp35_q14": 0.692,
+        "pp35_q15": 0.5,
+        "pp51_q01": 0.636,
+        "pp51_q02": 0.727,
+        "pp51_q03": 0.857,
+        "pp51_q04": 0.429,
+        "pp51_q05": 0.875,
+        "pp51_q06": 0.714,
+        "pp51_q07": 0.636,
+        "pp51_q08": 1.0,
+        "pp51_q09": 0.833,
+        "pp51_q10": 0.4
+      }
+    },
+    "test": {
+      "mean": 0.7545145826395826,
+      "median": 0.7638888888888888,
+      "spearman_with_bm25_rr": 0.27601582261898544,
+      "spearman_with_dense_rr": 0.15217071869545717,
+      "per_question": {
+        "pp5_t01": 0.692,
+        "pp5_t02": 0.875,
+        "pp5_t03": 0.7,
+        "pp5_t04": 0.545,
+        "pp5_t05": 0.889,
+        "pp5_t06": 0.545,
+        "pp5_t07": 0.571,
+        "pp5_t08": 0.583,
+        "pp5_t09": 0.833,
+        "pp5_t10": 0.714,
+        "pp5_t11": 0.429,
+        "pp5_t12": 1.0,
+        "pp5_t13": 0.6,
+        "pp5_t14": 0.889,
+        "pp5_t15": 0.75,
+        "pp35_t01": 0.75,
+        "pp35_t02": 1.0,
+        "pp35_t03": 0.857,
+        "pp35_t04": 0.571,
+        "pp35_t05": 0.778,
+        "pp35_t06": 0.818,
+        "pp35_t07": 0.583,
+        "pp35_t08": 0.75,
+        "pp35_t09": 1.0,
+        "pp35_t10": 0.667,
+        "pp35_t11": 0.75,
+        "pp35_t12": 0.857,
+        "pp35_t13": 0.25,
+        "pp35_t14": 0.75,
+        "pp35_t15": 0.4,
+        "pp51_t01": 0.857,
+        "pp51_t02": 1.0,
+        "pp51_t03": 0.833,
+        "pp51_t04": 1.0,
+        "pp51_t05": 0.857,
+        "pp51_t06": 0.545,
+        "pp51_t07": 0.889,
+        "pp51_t08": 0.9,
+        "pp51_t09": 0.9,
+        "pp51_t10": 1.0
+      }
+    }
+  },
+  "errors": {
+    "dev": [
+      {
+        "id": "pp5_q05",
+        "question": "Sektor apa saja yang termasuk dalam penyelenggaraan Perizinan Berusaha Berbasis Risiko?",
+        "gold": "PP Nomor 5 Tahun 2021 Pasal 6",
+        "rank@5": null,
+        "rank@20": null,
+        "top1": "PP Nomor 5 Tahun 2021 Pasal 144",
+        "wrong_document": false,
+        "cross_reference": false,
+        "gold_chunks": 12
+      },
+      {
+        "id": "pp5_q09",
+        "question": "Apa bentuk Perizinan Berusaha untuk kegiatan usaha dengan tingkat Risiko rendah?",
+        "gold": "PP Nomor 5 Tahun 2021 Pasal 12",
+        "rank@5": 4,
+        "rank@20": 4,
+        "top1": "PP Nomor 5 Tahun 2021 Pasal 13",
+        "wrong_document": false,
+        "cross_reference": false,
+        "gold_chunks": 2
+      },
+      {
+        "id": "pp35_q01",
+        "question": "PKWT dapat dibuat berdasarkan dasar apa saja?",
+        "gold": "PP Nomor 35 Tahun 2021 Pasal 4",
+        "rank@5": 4,
+        "rank@20": 4,
+        "top1": "PP Nomor 35 Tahun 2021 Pasal 8",
+        "wrong_document": false,
+        "cross_reference": false,
+        "gold_chunks": 2
+      },
+      {
+        "id": "pp51_q02",
+        "question": "Bagaimana penghitungan nilai penyesuaian Upah minimum untuk daerah dengan kondisi tertentu menurut Pasal 26A?",
+        "gold": "PP Nomor 51 Tahun 2023 Pasal 26A",
+        "rank@5": 4,
+        "rank@20": 4,
+        "top1": "PP Nomor 51 Tahun 2023 Pasal 28",
+        "wrong_document": false,
+        "cross_reference": true,
+        "gold_chunks": 6
+      },
+      {
+        "id": "pp51_q03",
+        "question": "Kapan Upah minimum provinsi mulai berlaku setelah ditetapkan?",
+        "gold": "PP Nomor 51 Tahun 2023 Pasal 29",
+        "rank@5": null,
+        "rank@20": 6,
+        "top1": "PP Nomor 51 Tahun 2023 Pasal 28A",
+        "wrong_document": false,
+        "cross_reference": true,
+        "gold_chunks": 4
+      },
+      {
+        "id": "pp51_q04",
+        "question": "Faktor apa saja yang digunakan untuk mempertimbangkan nilai Upah minimum kabupaten/kota dalam ketentuan pengupahan yang diubah PP Nomor 51 Tahun 2023?",
+        "gold": "PP Nomor 51 Tahun 2023 Pasal 32",
+        "rank@5": null,
+        "rank@20": 15,
+        "top1": "PP Nomor 51 Tahun 2023 Pasal 71",
+        "wrong_document": false,
+        "cross_reference": false,
+        "gold_chunks": 3
+      },
+      {
+        "id": "pp51_q06",
+        "question": "Upah minimum apa yang digunakan pertama kali oleh kabupaten atau kota yang sudah memiliki Upah minimum tetapi kemudian masuk ke provinsi hasil pemekaran?",
+        "gold": "PP Nomor 51 Tahun 2023 Pasal 34C",
+        "rank@5": 4,
+        "rank@20": 4,
+        "top1": "PP Nomor 51 Tahun 2023 Pasal 34B",
+        "wrong_document": false,
+        "cross_reference": false,
+        "gold_chunks": 1
+      }
+    ],
+    "test": [
+      {
+        "id": "pp5_t11",
+        "question": "Dalam kondisi apa izin penggunaan sumber daya air dapat dicabut?",
+        "gold": "PP Nomor 5 Tahun 2021 Pasal 429",
+        "rank@5": null,
+        "rank@20": 11,
+        "top1": "PP Nomor 5 Tahun 2021 Pasal 434",
+        "wrong_document": false,
+        "cross_reference": false,
+        "gold_chunks": 4
+      },
+      {
+        "id": "pp5_t13",
+        "question": "Pejabat mana yang mengenakan sanksi administratif atas pelanggaran perizinan di bidang komunikasi dan informatika?",
+        "gold": "PP Nomor 5 Tahun 2021 Pasal 502",
+        "rank@5": null,
+        "rank@20": 8,
+        "top1": "PP Nomor 5 Tahun 2021 Pasal 465",
+        "wrong_document": false,
+        "cross_reference": true,
+        "gold_chunks": 2
+      },
+      {
+        "id": "pp5_t14",
+        "question": "Berapa kali dan untuk berapa lama peringatan tertulis diberikan kepada perusahaan alih daya?",
+        "gold": "PP Nomor 5 Tahun 2021 Pasal 516",
+        "rank@5": 5,
+        "rank@20": 5,
+        "top1": "PP Nomor 5 Tahun 2021 Pasal 385",
+        "wrong_document": false,
+        "cross_reference": false,
+        "gold_chunks": 6
+      },
+      {
+        "id": "pp51_t05",
+        "question": "Kapan upah minimum kabupaten/kota ditetapkan dibandingkan dengan upah minimum provinsi?",
+        "gold": "PP Nomor 51 Tahun 2023 Pasal 31",
+        "rank@5": null,
+        "rank@20": 10,
+        "top1": "PP Nomor 51 Tahun 2023 Pasal 25",
+        "wrong_document": false,
+        "cross_reference": false,
+        "gold_chunks": 2
+      }
+    ]
+  },
+  "latency_ms": {
+    "queries": 80,
+    "p50": 81.30270001129247,
+    "p95": 119.06789501954336,
+    "device": "cpu",
+    "chunks": 1814
+  }
+}
