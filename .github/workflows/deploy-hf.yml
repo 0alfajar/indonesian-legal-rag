@@ -15,15 +15,34 @@ concurrency:
 
 jobs:
   deploy:
-    if: ${{ vars.HF_SPACE_ID != '' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      # Missing configuration used to skip this job silently; now it is reported on the run page.
+      - name: Check configuration
+        id: config
+        env:
+          HAS_TOKEN: ${{ secrets.HF_TOKEN != '' }}
+          HF_SPACE_ID: ${{ vars.HF_SPACE_ID }}
+        run: |
+          if [ "$HAS_TOKEN" = "true" ] && [ -n "$HF_SPACE_ID" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+            echo "Deploying to https://huggingface.co/spaces/$HF_SPACE_ID" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            msg="Space deploy not configured: set repository secret HF_TOKEN (write) and variable HF_SPACE_ID (Settings → Secrets and variables → Actions)."
+            echo "::warning::$msg"
+            echo "$msg" >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - if: steps.config.outputs.ready == 'true'
+        uses: actions/checkout@v4
+      - if: steps.config.outputs.ready == 'true'
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - run: pip install "huggingface_hub>=0.30"
+      - if: steps.config.outputs.ready == 'true'
+        run: pip install "huggingface_hub>=0.30"
       - name: Upload to Space
+        if: steps.config.outputs.ready == 'true'
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
           HF_SPACE_ID: ${{ vars.HF_SPACE_ID }}
