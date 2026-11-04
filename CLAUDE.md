@@ -10,7 +10,7 @@ pip install -e ".[demo,dev]"     # local dev (add [ingestion] for PDF extraction
 ruff check . && pytest -q        # offline; must pass before any commit
 python app.py                    # Gradio demo (what the HF Space runs)
 legal-rag serve                  # stdlib HTML demo (what the Dockerfile runs)
-legal-rag search "<q>" | ask "<q>" | evaluate | ingest | index
+legal-rag search "<q>" | ask "<q>" | evaluate [--split test] | experiments | ingest | index
 ```
 
 ## Layout
@@ -26,7 +26,8 @@ legal-rag search "<q>" | ask "<q>" | evaluate | ingest | index
   Retrieval runs on CPU (`LEGAL_RAG_DEVICE=cpu`); keep the no-op `@spaces.GPU` in `app.py`.
 - Index loading verifies checksums and the chunk fingerprint; after `ingest`, always `index`.
 - Generation must stay source-bound: don't loosen `validate_answer` to accommodate a model.
-- Retrieval changes need before/after metrics (see the `evaluate-retrieval` skill).
+- Retrieval changes need before/after metrics (see the `evaluate-retrieval` skill). Never tune on
+  `data/evaluation/test.json`; it is frozen and pre-registered (a test enforces its hash).
 - Never log questions or keys; secrets go to `.env` locally and Space secrets remotely.
 
 ## Skills

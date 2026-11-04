@@ -5,7 +5,7 @@ import json
 import sys
 from pathlib import Path
 
-from .config import ROOT, QUESTIONS
+from .config import ROOT, QUESTIONS, TEST_QUESTIONS
 
 
 def main() -> int:
@@ -23,7 +23,11 @@ def main() -> int:
     index = commands.add_parser("index", help="Build the E5 vector index")
     index.add_argument("--batch-size", type=int, default=16)
     evaluate = commands.add_parser("evaluate", help="Compare retrieval methods without Gemini calls")
-    evaluate.add_argument("--questions", type=Path, default=QUESTIONS)
+    evaluate.add_argument("--split", choices=["dev", "test"], default="dev",
+                          help="dev = tuning set; test = held-out set (report it, never tune on it)")
+    evaluate.add_argument("--questions", type=Path, help="Custom question file (overrides --split)")
+    experiments = commands.add_parser(
+        "experiments", help="Weight sweep, cross-validated weight selection, ablations, error analysis")
     for name in ("search", "ask"):
         command = commands.add_parser(name, help="Retrieve sources" if name == "search" else "Retrieve sources and ask Gemini")
         command.add_argument("question")
@@ -35,7 +39,7 @@ def main() -> int:
     serve = commands.add_parser("serve", help="Start the local portfolio web demo")
     serve.add_argument("--host", default=None, help="Host interface to bind to (defaults to $HOST or 0.0.0.0)")
     serve.add_argument("--port", type=int, default=None, help="Port to listen on (defaults to $PORT or 8000)")
-    for command in (index, evaluate, serve, commands.choices["search"], commands.choices["ask"]):
+    for command in (index, evaluate, experiments, serve, commands.choices["search"], commands.choices["ask"]):
         command.add_argument("--offline", action="store_true", help="Load embedding model from local cache only")
     args = parser.parse_args()
     try:
@@ -50,7 +54,11 @@ def main() -> int:
             print(build_index(args.offline, args.batch_size))
         elif args.command == "evaluate":
             from .evaluation import evaluate as run
-            run(args.offline, args.questions.resolve())
+            path = args.questions or (TEST_QUESTIONS if args.split == "test" else QUESTIONS)
+            run(args.offline, path.resolve())
+        elif args.command == "experiments":
+            from .experiments import run_all
+            run_all(args.offline)
         elif args.command == "serve":
             from .server import serve as run
             run(port=args.port, host=args.host, offline=args.offline)
